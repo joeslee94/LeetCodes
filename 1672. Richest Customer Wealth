@@ -1,0 +1,18 @@
+public class Solution
+{
+    public int MaximumWealth(int[][] accounts)
+    {
+        int highestMoney = 0;
+        
+        foreach (int[] account in accounts)
+        {
+            int accountTotal = account.Sum();
+            
+            if(accountTotal > highestMoney)
+            {
+                highestMoney = accountTotal;
+            }
+        }
+        return highestMoney;
+    }
+}
