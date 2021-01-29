@@ -1,0 +1,41 @@
+public class ParkingSystem {
+    
+    int bigSpaces;
+    int medSpaces;
+    int smlSpaces;
+
+    public ParkingSystem(int big, int medium, int small)
+    {
+        bigSpaces = big;
+        medSpaces = medium;
+        smlSpaces = small;
+        
+    }
+    
+    public bool AddCar(int carType)
+    {
+        if (carType == 1 && bigSpaces > 0)
+        {
+            bigSpaces = bigSpaces - 1;
+            return true;
+        }
+        if (carType == 2 && medSpaces > 0)
+        {
+            medSpaces = medSpaces - 1;
+            return true;
+        }
+        if (carType == 3 && smlSpaces > 0)
+        {
+            smlSpaces = smlSpaces - 1;
+            return true;
+        }
+        return false;
+        
+    }
+}
+
+/**
+ * Your ParkingSystem object will be instantiated and called as such:
+ * ParkingSystem obj = new ParkingSystem(big, medium, small);
+ * bool param_1 = obj.AddCar(carType);
+ */
