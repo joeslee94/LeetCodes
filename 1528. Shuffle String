@@ -1,0 +1,10 @@
+public class Solution 
+{
+    public string RestoreString(string s, int[] indices) 
+    {
+        char[] arrayJumbled = s.ToCharArray();
+        Array.Sort(indices, arrayJumbled);
+        string Unjumbled = new string(arrayJumbled);
+        return Unjumbled;
+    }
+}
