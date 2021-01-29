@@ -1,0 +1,24 @@
+public class Solution 
+{
+    public int[] SmallerNumbersThanCurrent(int[] nums)
+    {
+        List<int> biggerList = new List<int>();
+
+            foreach (int i in nums)
+            {
+                int greaterThanCounter = 0;
+
+                foreach (int j in nums)
+                {
+                    if (i > j && i!= j)
+                    {
+                        greaterThanCounter++;
+                        //biggerList.Add(greaterThanCounter);
+                    }
+                }
+                biggerList.Add(greaterThanCounter);
+            }
+            int[] finalArray = biggerList.ToArray();
+            return finalArray;
+    }
+}
