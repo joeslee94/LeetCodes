@@ -1,0 +1,26 @@
+public class Solution {
+    public int SubtractProductAndSum(int n) {
+            
+            string numString = Convert.ToString(n);
+            char[] numArrayChars = numString.ToCharArray();
+            int[] numArrayInts = Array.ConvertAll(numArrayChars, c => (int)Char.GetNumericValue(c));
+
+            //gets the product from the digits created
+            int product = 1;
+            foreach (int i in numArrayInts)
+            {
+                product = product * i;
+            }
+
+            //gets the sum of the digits created
+            int sum = 0;
+            foreach (int i in numArrayInts)
+            {
+                sum = sum + i;
+            }
+
+            int answer = product - sum;
+        
+        return answer;
+    }
+}
