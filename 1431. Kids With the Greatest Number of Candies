@@ -1,0 +1,27 @@
+public class Solution {
+    public IList<bool> KidsWithCandies(int[] candies, int extraCandies) {
+        
+        //int allCandies = candies.Length; //gets lengnth of list, but just put .Length
+        
+        int max = candies[0];
+        bool[] results = new bool[candies.Length];
+        
+        for(int i = 0; i<candies.Length; i++)
+        {
+            if(max < candies[i])
+            {
+                max = candies[i];
+            }
+        }
+        
+        for(int j=0; j<candies.Length; j++)
+        {
+            if((max-candies[j])<=extraCandies)
+                results[j] = true;         
+
+            else
+                results[j] = false;
+        }
+        return results;
+    }
+}
