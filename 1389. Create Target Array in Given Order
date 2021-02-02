@@ -1,0 +1,13 @@
+public class Solution
+{
+    public int[] CreateTargetArray(int[] nums, int[] index)
+    {
+        var finalList = new List<int>(); //empty list to add elements into
+
+        for (int i = 0; i < nums.Length; i++)
+            {
+                finalList.Insert(index[i], nums[i]);
+            }
+        return finalList.ToArray();           
+    }
+}
