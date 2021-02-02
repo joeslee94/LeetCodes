@@ -1,0 +1,23 @@
+public class Solution 
+{
+    public int[] DecompressRLElist(int[] nums)
+    {
+            var result = new List <int>(); //empty list
+            for(int i = 0; i < nums.Length; i += 2)
+            //1st iteration is (i = 0, 0 < 4, i+=2) so i is still 0 and since the statement is true (0 < 4) continue
+            //2nd iteration is (i = 2, 2 < 4, i+=2
+            {
+                for(int j = 0; j < nums[i]; j++)
+                //1st iteration is (j = 0, 0 < nums[0] (1), j++) and since the statement (0 < 1) is true, continue
+                //this statement keeps running until num[i] is fulfilled. num[i] is every other number starting from first element by the condition +=2
+                {
+                    result.Add(nums[i + 1]);
+                    //This statement adds the next item within the array of nums into the list
+                    //1st iteration adds nums[0+1] which is 2 to the new list named result.
+                    //ITERATION is broken because after j++ j becomes 1 and 1 is not less than nums[i] which is 1.
+                }
+            
+            }
+        return result.ToArray();
+    }
+}
