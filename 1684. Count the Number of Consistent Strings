@@ -20,6 +20,7 @@ namespace _1684._Count_the_Number_of_Consistent_Strings
                     if (!allowed.Contains(c))
                     {
                         numberofinvalidwords++;
+                        break;
                     }
                 }
             }
