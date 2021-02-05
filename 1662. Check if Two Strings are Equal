@@ -1,0 +1,32 @@
+using System;
+using System.Linq;
+
+namespace _1662._Check_if_Two_String_Arrays_are_Equal
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            string[] wordOne = new string[] { "ab", "c" };
+            string[] wordTwo = new string[] { "a", "bc" };
+
+            string stringwordOne = string.Join("", wordOne);
+            string stringwordTwo = string.Join("", wordTwo);
+
+            int truecounter = 0;
+
+            if (stringwordOne == stringwordTwo)
+            {
+                truecounter++;
+            }
+            else
+            {
+                return;
+            }
+
+            Console.WriteLine(truecounter);
+
+        }
+    }
+}
