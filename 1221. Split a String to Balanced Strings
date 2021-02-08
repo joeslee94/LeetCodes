@@ -1,0 +1,21 @@
+public class Solution
+{
+    public int BalancedStringSplit(string s)
+    {
+        int howmanytimesR = 0;
+        int howmanypairs = 0;
+        
+        foreach(var character in s)
+        {
+            if (character.ToString() == "R")
+                howmanytimesR++;
+            else
+                howmanytimesR--;
+            
+            if (howmanytimesR == 0)
+                howmanypairs++;
+        }
+        
+        return howmanypairs;
+    }
+}
