@@ -1,0 +1,8 @@
+public class Solution
+{
+    public string ToLowerCase(string str)
+    {
+        string loweredstr;
+        return loweredstr = str.ToLower();
+    }
+}
