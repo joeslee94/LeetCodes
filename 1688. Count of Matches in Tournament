@@ -1,0 +1,23 @@
+public class Solution
+{
+    public int NumberOfMatches(int n)
+    {
+        int numberofrounds = 0;
+
+            while (n > 1)
+            {
+                if (n % 2 == 0)
+                {
+                    numberofrounds += n / 2;
+                    n = n / 2;
+                }
+
+                if (n % 2 != 0)
+                {
+                    numberofrounds += (n - 1) / 2;
+                    n = ((n - 1) / 2) + 1;
+                }
+            }
+        return numberofrounds;
+    }
+}
