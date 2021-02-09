@@ -1,0 +1,22 @@
+public class Solution
+{
+    public int FindNumbers(int[] nums)
+    {
+        
+        string stringtonums = String.Join(",", nums.Select(p => p.ToString()).ToArray()); //to make the array to string
+        string[] splitbycommanums = stringtonums.Split(',');
+        int evendigitnumbers = 0;
+        
+        foreach (var number in splitbycommanums)
+        {
+            int lengthofnum = number.Length;
+            int evenorodd = lengthofnum % 2;
+            if(evenorodd == 0)
+            {
+                evendigitnumbers++;
+            }
+        }
+        return evendigitnumbers;
+   
+    }
+}
