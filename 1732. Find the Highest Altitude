@@ -1,0 +1,20 @@
+public class Solution
+{
+    public int LargestAltitude(int[] gain)
+    {
+        int gainrunningtotal = 0;
+        int highesttotalgain = 0;
+        
+        for (int i = 0; i < gain.Length; i++)
+            {
+                gainrunningtotal += gain[i];
+
+                if (gainrunningtotal > highesttotalgain)
+                {
+                    highesttotalgain = gainrunningtotal;
+                }
+            }
+        
+        return highesttotalgain;
+     }
+}
