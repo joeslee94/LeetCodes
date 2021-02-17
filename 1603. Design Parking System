@@ -1,41 +1,63 @@
-public class ParkingSystem {
-    
-    int bigSpaces;
-    int medSpaces;
-    int smlSpaces;
+//IMPLEMENTING THE CLASS IN MAIN
+using System;
 
-    public ParkingSystem(int big, int medium, int small)
+namespace _1603._Design_Parking_System_v2
+{
+    class Program
     {
-        bigSpaces = big;
-        medSpaces = medium;
-        smlSpaces = small;
-        
-    }
-    
-    public bool AddCar(int carType)
-    {
-        if (carType == 1 && bigSpaces > 0)
+        static void Main(string[] args)
         {
-            bigSpaces = bigSpaces - 1;
-            return true;
+            ParkingSystem parkinglotOne = new ParkingSystem(1, 1, 0);
+            parkinglotOne.AddCar(2);
+            parkinglotOne.AddCar(3);
+            parkinglotOne.AddCar(1);
+            parkinglotOne.AddCar(1);
         }
-        if (carType == 2 && medSpaces > 0)
-        {
-            medSpaces = medSpaces - 1;
-            return true;
-        }
-        if (carType == 3 && smlSpaces > 0)
-        {
-            smlSpaces = smlSpaces - 1;
-            return true;
-        }
-        return false;
-        
     }
 }
 
-/**
- * Your ParkingSystem object will be instantiated and called as such:
- * ParkingSystem obj = new ParkingSystem(big, medium, small);
- * bool param_1 = obj.AddCar(carType);
- */
+//CLASS FOR THE PARKING SYSTEM
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace _1603._Design_Parking_System_v2
+{
+    class ParkingSystem
+    {
+        int BigSpot;
+        int MedSpot;
+        int SmallSpot;
+        public ParkingSystem(int big, int medium, int small)
+        {
+            BigSpot = big;
+            MedSpot = medium;
+            SmallSpot = small;
+        }
+
+        public bool AddCar(int carType)
+        {
+            if (carType == 1 && BigSpot > 0)
+            {
+               BigSpot--;
+               return true;
+            }
+            else if (carType == 2 && MedSpot > 0)
+            {
+                MedSpot--;
+                return true;
+              
+            }
+            else if (carType == 3 && SmallSpot > 0)
+            {
+                SmallSpot--;
+                return true;
+            }
+            else if (carType == 0)
+            {
+                return false;
+            }
+            else return false;
+        }
+    }
+}
