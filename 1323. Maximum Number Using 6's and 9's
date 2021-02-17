@@ -1,0 +1,29 @@
+using System;
+using System.Linq;
+using System.Text;
+
+namespace _1323._Maximum_69_Number
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int num = 9969;
+            string numtostring = num.ToString();
+            StringBuilder numtostringsb = new StringBuilder(numtostring);
+
+            int firstsix = numtostring.IndexOf('6');
+
+            if (firstsix >= 0)
+            {
+                numtostringsb[firstsix] = '9';
+                string changednumtostring = numtostringsb.ToString();
+                int changednum = Convert.ToInt32(changednumtostring);
+                Console.WriteLine(changednum);
+            }
+            else
+                Console.WriteLine(num);
+            
+        }
+    }
+}
