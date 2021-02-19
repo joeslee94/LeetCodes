@@ -1,0 +1,33 @@
+public class Solution
+{
+    public int Reverse(int x) 
+    {
+            if (x == 0)
+            {
+                return 0;
+            }
+            else if (x < 0)
+            {
+                x *= -1;
+                int xposrev = ReverseInt(x);
+                return -1 * xposrev;
+
+            }
+            else
+                return ReverseInt(x);
+
+    }
+        static int ReverseInt(int x)
+        {
+            string numtostring = x.ToString();
+            char[] numtochararray = numtostring.ToCharArray();
+            Array.Reverse(numtochararray);
+
+            string reversednumtochararray = new string(numtochararray);
+
+            if (int.TryParse(reversednumtochararray, out int xconverted))
+                return xconverted;
+            else
+                return 0;
+        }
+}
