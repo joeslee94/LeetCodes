@@ -1,0 +1,28 @@
+public class Solution 
+{
+    public int SumOddLengthSubarrays(int[] arr)
+    {
+        int sum = 0;
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+          for (int j = i; j < arr.Length; j+=2)
+          {
+            sum += sumSubArrays(arr, i, j);
+          }
+        }
+        return sum;
+    }
+    
+        static int sumSubArrays(int[] arr, int start, int end)
+        {
+            int sum = 0;
+            for (int i = start; i <= end; i++)
+            {
+                sum += arr[i];
+            }
+            return sum;
+        }
+}
+
+//I do not like that the solution is in 3 loops. will edit to see if I can do it in a more efficient manner.
