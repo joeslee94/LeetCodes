@@ -1,0 +1,41 @@
+public class Solution
+{
+    public int UniqueMorseRepresentations(string[] words)
+    {
+            string[] morsecodeletters = new string[]
+            {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
+
+            char[] lettersinalphabet = new char[]
+            {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
+            
+            List<string> morsestrings = new List<string>();
+
+            if (words.Length == 0)
+            {
+                return 0;
+            }
+            else if(words.Length == 1)
+            {
+                return 1;
+            }
+            else
+            {
+                foreach (string word in words)
+                {
+                    char[] wordtochar = word.ToCharArray();
+                    string fullmorse = "";
+
+                    foreach (char characters in wordtochar)
+                    {
+                        int arridxofalpha = Array.IndexOf(lettersinalphabet, characters);
+                        string stralphatomorse = string.Join("", morsecodeletters[arridxofalpha]);
+                        fullmorse += stralphatomorse;
+                    }
+                    morsestrings.Add(fullmorse);
+                }
+                var distinctstrings = morsestrings.Distinct();
+                int distinctcount = distinctstrings.Count();
+                return distinctcount;
+            }
+    }
+}
