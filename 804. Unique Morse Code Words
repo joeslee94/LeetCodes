@@ -1,41 +1,52 @@
-public class Solution
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _804._Unique_Morse_Code_Words
 {
-    public int UniqueMorseRepresentations(string[] words)
+    class Program
     {
+        static void Main(string[] args)
+        {
             string[] morsecodeletters = new string[]
             {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
 
             char[] lettersinalphabet = new char[]
             {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
-            
-            List<string> morsestrings = new List<string>();
+
+            string[] words = new string[]
+            {"gin", "zen", "gig", "msg"};
+
+            HashSet<string> morsestrings = new HashSet<string>();
+            //cannot have doubles in HASHSET
 
             if (words.Length == 0)
             {
-                return 0;
+                Console.WriteLine(0);
             }
             else if(words.Length == 1)
             {
-                return 1;
+                Console.WriteLine(1);
             }
             else
             {
                 foreach (string word in words)
                 {
-                    char[] wordtochar = word.ToCharArray();
+                    char[] wordtochar = word.ToCharArray(); 
                     string fullmorse = "";
 
-                    foreach (char characters in wordtochar)
+                    foreach (char letter in wordtochar)
                     {
-                        int arridxofalpha = Array.IndexOf(lettersinalphabet, characters);
-                        string stralphatomorse = string.Join("", morsecodeletters[arridxofalpha]);
-                        fullmorse += stralphatomorse;
+                        //int arridxofalpha = Array.IndexOf(lettersinalphabet, characters);
+                        //is the same as below
+                        int index = letter - 'a';
+                        //a is stored as 97. g is stored as an int as well.
+                        fullmorse += morsecodeletters[index];
                     }
                     morsestrings.Add(fullmorse);
                 }
-                var distinctstrings = morsestrings.Distinct();
-                int distinctcount = distinctstrings.Count();
-                return distinctcount;
+                Console.WriteLine(morsestrings.Count());
             }
+        }
     }
 }
