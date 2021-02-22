@@ -1,0 +1,22 @@
+public class Solution
+{
+    public IList<string> StringMatching(string[] words)
+    {
+            HashSet<string> matchedstrings = new HashSet<string>();
+            Array.Sort(words, (wordOne, wordTwo) => wordOne.Length.CompareTo(wordTwo.Length));
+
+            for (int i = 0; i < words.Length-1; i++)
+            {
+                for (int j = words.Length-1; j > i; j--)
+                {
+                    if (words[j].Contains(words[i]))
+                    {
+                        matchedstrings.Add(words[i]);
+                    }
+                }
+            }
+
+            List<string> completematches = matchedstrings.ToList();
+            return completematches;
+    }
+}
