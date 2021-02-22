@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _1._Two_Sum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] nums = new int[] { -1, -2, -3, -4, -5 };
+            int target = -8;
+            int[] answercheck = TwoInt(nums, target);
+            
+            foreach (int item in answercheck)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        static int[] TwoInt(int[] nums, int target)
+        {
+            HashSet<int> listofcorrectidx = new HashSet<int>();
+            int[] correctidx = new int[2];
+            int pretargetOne;
+            int pretargetTwo;
+
+            for (int i = 0; i < nums.Length-1; i++)
+            {
+                for (int j = nums.Length-1; j > i; j--)
+                {
+                    pretargetOne = nums[i];
+                    pretargetTwo = nums[j];
+
+                    if (pretargetOne + pretargetTwo == target)
+                    {
+                        listofcorrectidx.Add(i);
+                        listofcorrectidx.Add(j);
+                        correctidx = listofcorrectidx.ToArray();
+                        break;
+                    }
+                }
+            }
+            return correctidx;
+        }
+    }
+}
