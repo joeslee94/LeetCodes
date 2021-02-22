@@ -1,0 +1,25 @@
+using System;
+using System.Linq;
+
+namespace _1464._Maximum_Product_of_Two_Elements_in_an_Array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] nums = new int[] { 3, 4, 5, 2 };
+            Console.WriteLine(MaxProduct(nums));
+        }
+
+        static int MaxProduct(int[] nums)
+        {
+            Array.Sort(nums);
+            int secondtolast = nums.Length-2;
+            int secondlargest = nums[secondtolast] - 1;
+            int largestvalue = nums.Max() - 1;
+
+            int maxvalue = secondlargest * largestvalue;
+            return maxvalue;
+        }
+    }
+}
