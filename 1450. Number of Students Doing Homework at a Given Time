@@ -1,0 +1,17 @@
+public class Solution 
+{
+    public int BusyStudent(int[] startTime, int[] endTime, int queryTime) 
+    {
+            int busystudent = 0;
+  
+            for (int times = 0; times < startTime.Length; times++)
+            {
+                if (queryTime <= endTime[times] && queryTime >= startTime[times])
+                {
+                    busystudent++;
+                }
+            }
+
+            return busystudent;
+    }
+}
