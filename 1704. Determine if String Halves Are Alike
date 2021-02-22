@@ -1,0 +1,57 @@
+using System;
+using System.Linq;
+
+namespace _1704._Determine_if_String_Halves_are_Alike
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "Uo";
+            Console.WriteLine(HalvesAreAlike(s));
+        }
+        static bool HalvesAreAlike(string s)
+        {
+            s = s.ToLower();
+            char[] fullword = s.ToCharArray();
+            int totallength = fullword.Length;
+            int halftotallength = totallength / 2;
+
+            char[] vowels = new char[] { 'a', 'e', 'i', 'o', 'u' };
+
+            //created two chararrays
+            char[] firsthalf = new char[halftotallength];
+            Array.Copy(fullword, 0, firsthalf, 0, halftotallength);
+  
+            char[] secondhalf = new char[halftotallength];
+            Array.Copy(fullword, halftotallength, secondhalf, 0, halftotallength);
+
+            int numofvowelsfirsthalf = 0;
+            int numofvowelssecondhalf = 0;
+
+            foreach (char letter in firsthalf)
+            {
+                if (vowels.Contains(letter))
+                {
+                    numofvowelsfirsthalf++;
+                }
+            }
+
+            foreach (char letter in secondhalf)
+            {
+                if (vowels.Contains(letter))
+                {
+                    numofvowelssecondhalf++;
+                }
+            }
+           
+            if (numofvowelsfirsthalf != numofvowelssecondhalf)
+            {
+                return false;
+            }
+            else
+                return true;
+
+        }
+    }
+}
