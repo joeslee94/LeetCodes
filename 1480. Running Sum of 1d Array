@@ -1,0 +1,17 @@
+public class Solution
+{
+    public int[] RunningSum(int[] nums)
+    {
+            List<int> runningsums = new List<int>();
+            int newsum = 0;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                newsum += nums[i];
+                runningsums.Add(newsum);
+            }
+
+            int[] runningsum = runningsums.ToArray();
+            return runningsum;
+    }
+}
