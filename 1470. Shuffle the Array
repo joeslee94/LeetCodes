@@ -1,0 +1,15 @@
+public class Solution {
+    public int[] Shuffle(int[] nums, int n) {
+        int[] organizedList = new int[nums.Length];
+        
+        int h = 0;
+        for(int i = 0; i<n; ++i)
+        {
+            organizedList[h] = nums[i]; //odd numbers in the array
+            organizedList[h+1] = nums[i+n]; //even numbers in the array
+            h+=2;
+        }
+        return organizedList;
+        
+    }
+}
