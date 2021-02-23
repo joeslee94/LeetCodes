@@ -1,0 +1,20 @@
+using System;
+using System.Text.RegularExpressions;
+
+public class Solution
+{
+    public bool IsPalindrome(string s)
+    {
+            string nosymbols = Regex.Replace(s, @"[^a-zA-Z0-9]+", "");
+            string allower = nosymbols.ToLower();
+            
+            char[] nosymbolschar = allower.ToCharArray();
+            Array.Reverse(nosymbolschar);
+            string revnosymbols = new string(nosymbolschar);
+
+            if (allower == revnosymbols)
+                return true;
+            else
+                return false;
+    }
+}
