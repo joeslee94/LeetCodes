@@ -1,0 +1,35 @@
+using System;
+
+namespace _13._Roman_to_Integer
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(RomanToInt("MCMXCIV"));
+        }
+        static int RomanToInt(string s)
+        {
+            int romannum = 0;
+
+            if (s.Contains("IV") || s.Contains("IX")) romannum -= 2;
+            if (s.Contains("XL") || s.Contains("XC")) romannum -= 20;
+            if (s.Contains("CD") || s.Contains("CM")) romannum -= 200;
+            
+            char[] stochar = s.ToCharArray();
+            for (int i = 0; i < stochar.Length; i++)
+            {
+                if (stochar[i] == 'M') romannum += 1000;
+                else if (stochar[i] == 'D') romannum += 500;
+                else if (stochar[i] == 'C') romannum += 100;
+                else if (stochar[i] == 'L') romannum += 50;
+                else if (stochar[i] == 'X') romannum += 10;
+                else if (stochar[i] == 'V') romannum += 5;
+                else if (stochar[i] == 'I') romannum += 1;
+                else romannum += 0;
+            }
+            return romannum;
+        }
+
+    }
+}
