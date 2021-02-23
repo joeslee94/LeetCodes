@@ -1,0 +1,15 @@
+public class Solution 
+{
+    public bool IsPalindrome(int x) 
+    {
+            string xtostring = x.ToString();
+            char[] xstringtochar = xtostring.ToCharArray();
+            Array.Reverse(xstringtochar);
+            string xreverse = new string(xstringtochar);
+
+            if (xreverse == xtostring)
+                return true;
+            else
+                return false;    
+    }
+}
