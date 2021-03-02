@@ -1,0 +1,58 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace _1374._Generate_a_String_With_Characters_That_Have_Odd_Counts
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = 17;
+            GenerateTheString(n);
+            Console.WriteLine(GenerateTheString(n));
+        }
+
+        static string GenerateTheString(int n)
+        {
+            char a = 'a';
+            char b = 'b';
+            string answer = "";
+
+            List<char> prestring = new List<char>();
+
+            if (n % 2 != 0)
+            {
+                for (int i = 1; i <= n; i++)
+                {
+                    prestring.Add(a);
+                }
+
+                char[] charprestring = prestring.ToArray();
+                answer += new string(charprestring);
+                return answer;
+            }
+            else if (n % 2 == 0)
+            {
+                for (int i = 0; i < n-1; i++)
+                {
+                    prestring.Add(a);
+                }
+                prestring.Add(b);
+
+
+                char[] charprestring = prestring.ToArray();
+                answer += new string(charprestring);
+                return answer;
+            }
+            else if (n == 0)
+            {
+                return answer;
+            }
+            else
+            {
+                return answer;
+            }
+        }
+    }
+}
