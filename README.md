@@ -5,5 +5,5 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 39 Solved
-- Last Solved: 728. Self Dividing Numbers
+- As of 03MAR21: 40 Solved
+- Last Solved: 905. Sort Array By Parity
