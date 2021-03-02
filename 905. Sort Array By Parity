@@ -1,0 +1,22 @@
+public class Solution
+{
+    public int[] SortArrayByParity(int[] A)
+    {
+            List<int> even = new List<int>();
+            List<int> odd = new List<int>();
+
+            foreach (var num in A)
+            {
+                if (num % 2 == 0)
+                {
+                    even.Add(num);
+                }
+                else if (num % 2 != 0)
+                {
+                    odd.Add(num);
+                }
+            }
+            even.AddRange(odd);
+            return even.ToArray();
+    }
+}
