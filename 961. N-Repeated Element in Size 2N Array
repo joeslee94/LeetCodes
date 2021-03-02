@@ -1,0 +1,19 @@
+public class Solution
+{
+    public int RepeatedNTimes(int[] A) 
+    {
+            Array.Sort(A);
+            int repNum = 0;
+
+            for (int i = 0; i < A.Length - 1; i++)
+            {
+                if (A[i] == A[i + 1])
+                {
+                    repNum = A[i];
+                }
+                
+            }
+
+            return repNum;
+    }
+}
