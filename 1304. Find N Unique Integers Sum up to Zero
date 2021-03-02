@@ -1,30 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace _1304._Find_N_Unique_Integers_Sum_up_to_Zero
+public class Solution
 {
-    class Program
+    public int[] SumZero(int n)
     {
-        static void Main(string[] args)
-        {
-            int n = 16;
-            SumZero(n);
-        }
-
-        static int[] SumZero(int n)
-        {
             HashSet<int> addToZero = new HashSet<int>();
             List<int> positveNums = new List<int>();
 
-            //created list to add 1 to 1000
-            List<int> oneToThousand = new List<int>();
-            for (int i = 1; i <= 1000; i++)
-            {
-                oneToThousand.Add(i);
-            }
-
-            //if n is odd always add 0 and then add (n-1)/2 positive elements. Then add those same elements *-1
             if (n == 0)
             {
                 int[] zero = { 0 };
@@ -71,6 +51,5 @@ namespace _1304._Find_N_Unique_Integers_Sum_up_to_Zero
                 int[] zero = { 0 };
                 return zero;
             }
-        }
     }
 }
