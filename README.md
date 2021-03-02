@@ -5,5 +5,5 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 40 Solved
-- Last Solved: 905. Sort Array By Parity
+- As of 03MAR21: 41 Solved
+- Last Solved: 961. N-Repeated Element in Size 2N Array
