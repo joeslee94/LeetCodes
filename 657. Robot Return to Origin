@@ -1,0 +1,21 @@
+public class Solution
+{
+    public bool JudgeCircle(string moves)
+    {
+            char[] letterinmoves = moves.ToCharArray();
+            List<char> movestochar = new List<char>();
+            movestochar.AddRange(letterinmoves);
+
+            var countU = movestochar.Where(letter => letter.Equals('U')).Count();
+            var countD = movestochar.Where(letter => letter.Equals('D')).Count();
+            var countR = movestochar.Where(letter => letter.Equals('R')).Count();
+            var countL = movestochar.Where(letter => letter.Equals('L')).Count();
+
+            if (countU == countD && countR == countL)
+            {
+                return true;
+            }
+            else
+                return false;
+    }
+}
