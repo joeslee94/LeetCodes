@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 45 Solved
-- Last Solved: 1742. Maximum Number of Balls in a Box
+- As of 03MAR21: 46 Solved
+- Last Solved: 1309. Decrypt String from Alphabet to Integer Mapping
 - PENDING: 
