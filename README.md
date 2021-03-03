@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 44 Solved
-- Last Solved: 1351. Count Negative Numbers in a Sorted Matrix
-- PENDING: 1742. Maximum Number of Balls in a Box
+- As of 03MAR21: 45 Solved
+- Last Solved: 1742. Maximum Number of Balls in a Box
+- PENDING: 
