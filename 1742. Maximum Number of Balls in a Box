@@ -1,0 +1,21 @@
+public class Solution
+{
+    public int CountBalls(int lowLimit, int highLimit)
+    {
+            int[] boxes = new int[46];
+
+            for (int num = lowLimit; num <= highLimit; num++)
+            {
+                int boxIndexfromSum = 0;
+                int numContainer = num;
+
+                while (numContainer > 0)
+                {
+                    boxIndexfromSum += numContainer % 10;
+                    numContainer /= 10;
+                }
+                boxes[boxIndexfromSum]++;
+            }
+            return boxes.Max();
+    }
+}
