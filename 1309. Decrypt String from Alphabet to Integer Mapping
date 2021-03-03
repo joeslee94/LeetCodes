@@ -1,0 +1,47 @@
+public class Solution
+{
+    public string FreqAlphabets(string s)
+    {
+            while (s.Contains("#"))
+            {
+                int firsthastag = 10;
+                int firstHastagLet = 106;
+                //'j' = 106
+                //can force by (char)num
+                
+                for (int i = 0; i <= 17; i++)
+                {
+                    int numIterate = firsthastag + i;
+                    string numasString = numIterate.ToString();
+
+                    int hastagLetIterate = firstHastagLet + i;
+                    char actualletter = (char)hastagLetIterate;
+                    string letter = actualletter.ToString();
+
+                    s = s.Replace($"{numasString}#", letter);
+                }
+            }
+
+            for (int i = 1; i <= 9 ; i++)
+            {
+                while (s.Contains($"{i}"))
+                {
+                    int firstletter = 1;
+                    int letterA = 97;
+
+                    for (int j = 0; j <= 9; j++)
+                    {
+                        int numIterate = firstletter + j;
+                        string numasString = numIterate.ToString();
+
+                        int LetIterate = letterA + j;
+                        char actualletter = (char)LetIterate;
+                        string letter = actualletter.ToString();
+
+                        s = s.Replace($"{numasString}", letter);
+                    }
+                }
+            }
+            return s;
+    }
+}
