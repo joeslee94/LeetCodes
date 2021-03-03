@@ -1,0 +1,19 @@
+public class Solution
+{
+    public int CountNegatives(int[][] grid)
+    {
+            int negativenum = 0;
+        
+            foreach (var num in grid)
+            {
+                foreach(var x in num)
+                {
+                    if (x < 0)
+                    {
+                    negativenum++;
+                    }
+                }
+            }
+            return negativenum;
+    }
+}
