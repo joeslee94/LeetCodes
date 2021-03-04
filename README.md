@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 48 Solved
-- Last Solved: 1502. Can Make Arithmetic Progression From Sequence
+- As of 03MAR21: 49 Solved
+- Last Solved: 1403. Minimum Subsequence in Non-Increasing Order
 - PENDING: 
