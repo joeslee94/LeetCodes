@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 47 Solved
-- Last Solved: 1207. Unique Number of Occurrences
+- As of 03MAR21: 48 Solved
+- Last Solved: 1502. Can Make Arithmetic Progression From Sequence
 - PENDING: 
