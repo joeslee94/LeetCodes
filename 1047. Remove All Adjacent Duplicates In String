@@ -1,0 +1,33 @@
+public class Solution
+{
+    public string RemoveDuplicates(string S)
+    {
+        char[] StoArray = S.ToCharArray();
+        int stringlength = S.Length;
+        
+        if (stringlength <= 2)
+        {
+            return S;
+        }
+        else if (stringlength > 2)
+        {
+            for (int i = 0; i + 1 < StoArray.Length; i++)
+            {
+                if (StoArray[i] == StoArray[i + 1] && stringlength > 2)
+                {
+                    string lettertoRemove = new string($"{StoArray[i]}");
+                    string removeDouble = new string($"{lettertoRemove}{lettertoRemove}");
+                    S = S.Replace(removeDouble, "");
+                    return RemoveDuplicates(S);
+                }
+                else if (StoArray[i] != StoArray[i + 1])
+                {
+                    continue;
+                }
+                else
+                    break;
+            }
+        }
+        return S;
+    }
+}
