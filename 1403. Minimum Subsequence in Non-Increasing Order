@@ -1,0 +1,29 @@
+public class Solution
+{
+    public IList<int> MinSubsequence(int[] nums)
+    {
+            Array.Sort(nums);
+
+            List<int> numsArrtoList = nums.ToList();
+            List<int> minSubsequence = new List<int>();
+            
+            int minSum = minSubsequence.Sum();
+            int numSum = numsArrtoList.Sum();
+
+            int i = nums.Length - 1;
+
+            if (nums.Length < 2)
+                return nums.ToList();
+            else
+                while (numSum >= minSum)
+                {
+                    minSubsequence.Add(nums[i]);
+                    numsArrtoList.Remove(nums[i]);
+                    i--;
+
+                    minSum = minSubsequence.Sum();
+                    numSum = numsArrtoList.Sum();
+                }
+            return minSubsequence;
+    }
+}
