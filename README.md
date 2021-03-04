@@ -6,5 +6,5 @@ Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
 - As of 03MAR21: 50 Solved
-- Last Solved: 1047. Remove All Adjacent Duplicates In String
+- Last Solved: [1047. Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
 - PENDING: [344. Reverse String](https://leetcode.com/problems/reverse-string/)
