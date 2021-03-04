@@ -1,0 +1,31 @@
+public class Solution
+{
+    public bool UniqueOccurrences(int[] arr)
+    {
+      Array.Sort(arr);
+      HashSet<int> numsOfArr = arr.ToHashSet();
+      int distinctNumsinArr = numsOfArr.Count();
+      
+      int[] checkArrforDistinct = OccurenceOfNum(numsOfArr, arr);
+      int occurenceOfNums = (checkArrforDistinct.Distinct()).Count();
+      
+      if (distinctNumsinArr == occurenceOfNums)
+        return true;
+      else
+        return false;
+    }
+    
+    static int[] OccurenceOfNum(HashSet<int> numsOfArr, int[] arr)
+    {
+      int distinctElements = numsOfArr.Count();
+      List<int> occurenceList = new List<int>();
+      foreach (var item in numsOfArr)
+      {
+        var countofnum = arr.Where(num => num.Equals(item)).Count();
+        occurenceList.Add(countofnum);
+      }
+
+      int[] occurenceArr = occurenceList.ToArray();
+      return occurenceArr;
+    }
+}
