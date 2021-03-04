@@ -1,0 +1,21 @@
+public class Solution
+{
+    public bool CanMakeArithmeticProgression(int[] arr)
+    {
+            Array.Sort(arr);
+            List<int> differenceStored = new List<int>();
+
+            for (int i = 0; i + 1 < arr.Length; i++)
+            {
+               int difference = arr[i] - arr[i+1];
+               differenceStored.Add(difference);
+            }
+
+            if (differenceStored.Distinct().Count() != 1)
+            {
+                return false;
+            }
+            else
+                return true;
+    }
+}
