@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: 49 Solved
-- Last Solved: 1403. Minimum Subsequence in Non-Increasing Order
-- PENDING: 
+- As of 03MAR21: 50 Solved
+- Last Solved: 1047. Remove All Adjacent Duplicates In String
+- PENDING: [344. Reverse String]https://leetcode.com/problems/reverse-string/
