@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [50 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1047. Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+- As of 03MAR21: [51 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 - PENDING: [344. Reverse String](https://leetcode.com/problems/reverse-string/)
