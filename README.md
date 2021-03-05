@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [51 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
-- PENDING: [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
+- As of 03MAR21: [52 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
+- PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
