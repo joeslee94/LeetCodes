@@ -1,0 +1,7 @@
+public class Solution
+{
+    public IList<int> FindDisappearedNumbers(int[] nums)
+    {
+        return Enumerable.Range(1, nums.Length).Except(nums).ToList();
+    }
+}
