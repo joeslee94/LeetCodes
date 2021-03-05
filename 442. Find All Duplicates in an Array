@@ -1,0 +1,8 @@
+public class Solution
+{
+    public IList<int> FindDuplicates(int[] nums)
+    {
+        var duplicatenums = nums.GroupBy(num => num).Where(x => x.Count() > 1).Select(y => y.Key).ToList();
+        return duplicatenums;
+    }
+}
