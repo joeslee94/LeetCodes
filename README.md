@@ -7,4 +7,4 @@ Problems that I solved on LeetCode to improve my technical skills.
 ### Quick Look
 - As of 03MAR21: [51 Solved](https://leetcode.com/joeslee94/)
 - Last Solved: [442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
-- PENDING: [344. Reverse String](https://leetcode.com/problems/reverse-string/)
+- PENDING: [448. Find All Numbers Disappeared in an Array](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
