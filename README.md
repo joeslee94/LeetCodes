@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [53 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1475. Final Prices With a Special Discount in a Shop](https://leetcode.com/problems/final-prices-with-a-special-discount-in-a-shop/)
+- As of 03MAR21: [54 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [344. Reverse String](https://leetcode.com/problems/reverse-string/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
