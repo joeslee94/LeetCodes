@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [57 Solved](https://leetcode.com/joeslee94/)
+- As of 03MAR21: [58 Solved](https://leetcode.com/joeslee94/)
 - Last Solved: [169. Majority Element](https://leetcode.com/problems/majority-element/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
