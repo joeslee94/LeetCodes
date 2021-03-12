@@ -1,0 +1,39 @@
+public class Solution
+{
+    public int MajorityElement(int[] nums)
+    {
+        //Create a HashSet that will localize distinct numbers in nums array
+        HashSet<int> distinctNums = nums.ToHashSet();
+        
+        //Created a temp integer probably much later as I was designing the loop. It's function is to hold the temporary count of a distinct element in the HashSet
+        int temp = 0;
+        
+        //An integer that is going to hold the actual value of the integer that appears the most
+        int greatestOccurence = 0;
+        
+        //Foreach loop to iterate through the HashSet created from nums to make sure all elements are accounted for
+        foreach (var num in distinctNums)
+        {
+            //integer numCounter to keep track of the occurences of said value that is being iterated through
+            int numCounter = 0;
+            
+            //for loop to go through each of the elements in num and increase the counter by 1 if it occurs
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (num == nums[i])
+                {
+                    numCounter++;
+                }
+            }
+            
+            //an if statement that allows for the computer to determine if the last number value counted is the one that occured the most. IF it did occur the most then it will become the new greatestOccurence
+            if (numCounter > temp)
+            {
+                greatestOccurence = num;
+                temp = numCounter;
+            }
+        }
+        //return greatestOccurence
+        return greatestOccurence;
+    }
+}
