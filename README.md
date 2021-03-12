@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [58 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [169. Majority Element](https://leetcode.com/problems/majority-element/)
+- As of 03MAR21: [59 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
