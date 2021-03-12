@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [55 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [58. Length of Last Word](https://leetcode.com/problems/length-of-last-word/)
+- As of 03MAR21: [56 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [942. DI String Match](https://leetcode.com/problems/di-string-match/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
