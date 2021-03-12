@@ -1,0 +1,42 @@
+public class Solution
+{
+    public int[] DiStringMatch(string S)
+    {
+       //When I appears, we want the lowest remaining number
+            //When D appears, we want the highest remaining number
+            //If I appears as [0] in char array, then we set int array [0] to 0
+            //If D appears as [0] in char array, then we set int array [0] to length of char array
+
+            //break up the string into character array
+            char[] StoArr = S.ToCharArray();
+            
+            //create 3 integers
+            int sizeOfCharArr = StoArr.Length;
+            int zeroUpward = 0;
+            int maxDownward = sizeOfCharArr;
+            
+            //create an int array with the number of elements = +1 of the number of elements of the char array
+            //4 chars means an int array of 5 elements
+            int[] incOrDecArr = new int[StoArr.Length + 1];
+
+            //for loop iteration through the array starting at i = 0
+            //two more if statements inside iterating through I/D
+            for (int i = 0; i < StoArr.Length; i++)
+            {
+                if (StoArr[i] == 'I')
+                {
+                    incOrDecArr[i] = zeroUpward++;
+                }
+                else if(StoArr[i] == 'D')
+                {
+                    incOrDecArr[i] = maxDownward--;
+                }
+            }
+            
+            //the missing piece/number that is remaining. can be either maxDownward or zeroUpward
+            incOrDecArr[sizeOfCharArr] = maxDownward;
+            
+            return incOrDecArr;
+        
+    }
+}
