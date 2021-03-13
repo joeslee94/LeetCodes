@@ -1,0 +1,36 @@
+public class Solution
+{
+    public int CalPoints(string[] ops)
+    {
+        List<int> rawPoints = new List<int>();
+        foreach (var pointsOrModifier in ops)
+        {
+            int lastItemIndex = rawPoints.Count - 1;
+
+            if (int.TryParse(pointsOrModifier, out int points))
+            {
+                rawPoints.Add(points);
+            }
+
+            if (pointsOrModifier == "C")
+            {
+                rawPoints.RemoveAt(lastItemIndex);
+            }
+
+            if (pointsOrModifier == "D")
+            {
+                int doubleValue = rawPoints[lastItemIndex];
+                rawPoints.Add(2 * doubleValue);
+            }
+
+            if (pointsOrModifier == "+")
+            {
+                int lastSecondtoLastSum = rawPoints[lastItemIndex] + rawPoints[lastItemIndex - 1];
+                rawPoints.Add(lastSecondtoLastSum);
+            }
+        }
+
+        int finalPoints = rawPoints.Sum();
+        return finalPoints;    
+    }
+}
