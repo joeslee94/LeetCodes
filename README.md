@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03MAR21: [59 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+- As of 03MAR21: [60 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [682. Baseball Game](https://leetcode.com/problems/baseball-game/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
