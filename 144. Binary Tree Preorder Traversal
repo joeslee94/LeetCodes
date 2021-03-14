@@ -1,0 +1,79 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution {
+    public IList<int> PreorderTraversal(TreeNode root)
+    {
+        //creating an IList vs List the difference is that Ilist 
+        IList<int> nodeValues = new List<int>();
+        
+        //checking to see if root is null in this case root is the entire TreeNode
+        if(root == null)
+            return nodeValues;
+        
+        //creating a stack to put each LEVEL of the binary tree into
+        Stack<TreeNode> nodeStack = new Stack<TreeNode>();
+        
+        //Pushing the root into the stack
+        nodeStack.Push(root);
+        //TreeNode root is structered as follow
+        //Left      Right        
+        //3         null
+        //null       2
+        //      1 (ROOT OF TREENODE)
+        
+     
+        //nodeStack will be the following after it is pushed
+        //Left     Right
+        //     1         (top) Last In First Out
+        //null     2
+        //3        null     (bottom)
+        
+        while(nodeStack.Count > 0)
+        //first cycle: 3 elements in stack (1, (null, 2), (3, null))
+        //second cycle: 2 elements in stack (2, (3, null))
+        //third cycle: 1 element in stack (3)
+        //NO fourth cycle, 3 was popped off so the count is 0
+        {
+            //Creating a NODE and equating it to the first item popped off of STACK
+            TreeNode node = nodeStack.Pop(); 
+            //first cycle: 1 is popped off
+            //second cycle: 2 is popped off
+            //third cycle: 3 is popped off
+            
+            nodeValues.Add(node.val);
+            //first cycle: 1 is added because it was popped off and stored into node and node.val is 1
+            //second cycle: 2 is added
+            //third cycle: 3 is added
+            
+                        
+            //why right before left?
+            //BECAUSE if there is a value to the RIGHT and LEFT,
+            //then the LEFT value needs to be on top (pushed into stack LAST) to be popped off first
+            //because we are reading the tree left to right.
+            
+            if(node.right != null) 
+                nodeStack.Push(node.right); 
+            //first cycle: node to the right of 1 is 2. so 2 is pushed onto the TOP of the stack.
+            //second cycle: node to the right of 2 is null, so nothing us pushed to the stack.
+            //third cycle: node to the right is null nothing is pushed
+
+            if(node.left != null)
+                nodeStack.Push(node.left);
+            //first cycle: node to the left of 1 is null. so NOTHING is pushed to the top of the stack.
+            //second cycle: node to the left of 2 is 3, so 3 is pushed to the top of the stack.
+            //third cycle: node to the left is null nothing is pushed.
+        }
+        return nodeValues;
+    }
+}
