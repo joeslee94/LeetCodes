@@ -1,0 +1,52 @@
+public class Solution 
+{
+    public IList<int> LuckyNumbers (int[][] matrix) 
+    {
+        List<int> luckyNumbers = new List<int>();
+
+        for (int i = 0; i < matrix.Length; i++)
+        {
+          int[] currentArr = matrix[i]; //initiliazing the first array
+          int minInRow = matrix[i].Min(); //find the min in row //once that is done the other numbers do not matter
+          int columnToCheck = Array.IndexOf(currentArr, minInRow); //find the index of the array to compare the elements within the other arrays at the same index
+          //I have successfully found the min value in the row
+          //I need to compare it against all the values in the column
+
+          bool isMinInRowMaxInColumn = true; 
+          //the reason for this boolean statement is because I am going to compare ALL the column elements against the minimum value in the row.
+          //IF by any chance the minimum value within the row IS NOT bigger than all of the elements within its column (iterated through by the for loop below)
+          //The loop will be terminated and the minimum value from that row will not be added
+          for (int j = 0; j < matrix.Length; j++) //going through all the elements within the column
+          {
+              int numsInColumn = matrix[j][columnToCheck]; //I am checking the numbers up and down from the column
+              if (numsInColumn > minInRow)
+              {
+                  isMinInRowMaxInColumn = false;
+                  break;
+              }
+              //I NEED TO CHECK ALL ELEMENTS IN THE COLUMNS
+              //The code below checks EACH element in the column against the min number that I found above.
+              //IT does NOT check the number against the WHOLE column.
+              // if(numsInColumn == minInRow) //if the items are equal because the items are all distince, means it is comparing the min num in row to itself
+              // {
+              //     continue;
+              // }
+              // else if(minInRow > numsInColumn) //IF the minimum in the row is greater than the other items in the column Add to luckynumbers
+              // //THIS LOGIC IS WRONG IT IS CHECKING for every iteration.
+              // {
+              //     luckyNumbers.Add(minInRow);
+              // }
+              // else //IF minimum is not greater or equal to then break and move on to the next row
+              // {
+              //     break;
+              // }
+          }
+
+          if(isMinInRowMaxInColumn)
+          {
+              luckyNumbers.Add(minInRow);
+          }
+      }
+      return luckyNumbers;
+    }
+}
