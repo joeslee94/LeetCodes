@@ -1,0 +1,21 @@
+public class Solution
+{
+    public double TrimMean(int[] arr)
+    {
+            double arrayCount = arr.Length;
+            
+            int fivePerc = (int)Math.Round(arrayCount * 0.05);
+            double fivePercDoubl = Math.Round(arrayCount * 0.05);
+
+            Array.Sort(arr);
+            double sum = 0;
+
+            for (int i = fivePerc; i < arr.Length - fivePerc; i++)
+            {
+                sum += arr[i];
+            }
+
+            double avg = sum / (arrayCount-fivePercDoubl*2);
+            return avg;
+    }
+}
