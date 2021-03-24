@@ -5,6 +5,6 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 15MAR21: [62 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [509. Fibonacci Number](https://leetcode.com/problems/fibonacci-number/)
+- As of 15MAR21: [63 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [824. Goat Latin](https://leetcode.com/problems/goat-latin/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
