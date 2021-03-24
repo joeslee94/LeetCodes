@@ -1,0 +1,26 @@
+public class Solution
+{
+    public int SingleNumber(int[] nums) 
+    {
+            int oneNum = 0;
+            
+            foreach (var num in nums)
+            {
+                oneNum ^= num;
+                //XOR follows the following rules
+                //first convert the number to a binary number
+                //0 ^ 0 or 1 ^ 1 = 0, 0 ^ 1 or 1 ^ 0 = 1
+                //Each number can be translated to binary code
+                //IF a binary number exists twice it will be subtracted from itself
+                //0000000000000100 = 4
+                //0000000000000001 = 1
+                //0000000000000010 = 2
+                //0 ^ 4 = 4 --> 0000000000000100
+                //4 ^ 1 = 5 --> 0000000000000101
+                //5 ^ 2 = 7 --> 0000000000000111
+                //7 ^ 1 = 6 --> 0000000000000110
+                //6 ^ 2 = 4 --> 0000000000000100
+            }
+            return oneNum;
+    }
+}
