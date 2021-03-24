@@ -1,0 +1,33 @@
+public class Solution
+{
+    public int Fib(int n)
+    {
+            int fibZero = 0;
+            int fibOne = 1;
+            int fibTwo = 1;
+            
+            if (n > 2)
+            {
+                int answer = Fib(n - 1) + Fib(n - 2);
+                return answer;
+            }
+
+            if (n == 0)
+            {
+                return fibZero;
+            }
+
+            if (n == 1)
+            {
+                return fibOne;
+            }
+
+            if (n == 2)
+            {
+                return fibTwo;
+            }
+
+            return 0;
+    }
+        
+}
