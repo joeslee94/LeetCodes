@@ -1,0 +1,67 @@
+public class Solution
+{
+    public string ModifyString(string s) 
+    {
+        char[] sToArr = s.ToCharArray();
+        if(s.Length == 1)
+        {
+            if(s == "?")
+            {
+                return "a";
+            }
+            else
+            {
+                return s;
+            }
+        }
+        
+        if (sToArr[0] == '?')
+        {
+            sToArr[0] = 'a';
+            if (sToArr[0] == sToArr[1])
+            {
+                sToArr[0] = 'b';
+            }
+            //only need to look at [1]
+        }
+
+        for (int i = 1; i < sToArr.Length - 1; i++)
+        {
+            if (sToArr[i] == '?')
+            {
+                //one of three things a, b, or c
+                //if letter before is not an a && letter after is not an a --> then a
+                //if letter before is not an b && letter after is not an b --> then b
+                //else change to c (if letter before is not an c && letter after is not an c --> then c)
+                if (sToArr[i-1] != 'a' && sToArr[i+1] != 'a')
+                {
+                    sToArr[i] = 'a';
+                }
+                else if (sToArr[i - 1] != 'b' && sToArr[i + 1] != 'b')
+                {
+                    sToArr[i] = 'b';
+                }
+                else
+                {
+                    sToArr[i] = 'c';
+                }
+            }
+            //else continue
+            //letter before it
+
+        }
+
+        if (sToArr[sToArr.Length-1] == '?')
+        {
+            sToArr[sToArr.Length - 1] = 'a';
+            if (sToArr[sToArr.Length - 1] == sToArr[sToArr.Length - 2])
+            {
+                sToArr[sToArr.Length - 1] = 'b';
+            }
+            //look only at the one before it
+        }
+
+        string noQues = new string(sToArr);
+        return noQues;
+    }
+}
