@@ -5,6 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 15MAR21: [66 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1380. Lucky Numbers in a Matrix](https://leetcode.com/problems/lucky-numbers-in-a-matrix/)
+- As of 15MAR21: [67 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [412. Fizz Buzz](https://leetcode.com/problems/fizz-buzz/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
+- CHALLENGE [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
