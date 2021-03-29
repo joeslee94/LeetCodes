@@ -42,7 +42,6 @@ public class Solution
                 specialNumbers++;
             }
         }
-
         return specialNumbers;
     }
 }
