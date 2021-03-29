@@ -1,0 +1,31 @@
+public class Solution
+{
+    public IList<string> FizzBuzz(int n)
+    {
+        var fizzBuzzList = new List<string>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 3 == 0)
+            {
+                if (i % 5 == 0)
+                {
+                    fizzBuzzList.Add("FizzBuzz");
+                }
+                else
+                {
+                    fizzBuzzList.Add("Fizz");
+                }
+            }
+            else if (i % 5 == 0)
+            {
+                fizzBuzzList.Add("Buzz");
+            }
+            else
+            {
+                string numtoString = i.ToString();
+                fizzBuzzList.Add(numtoString);
+            }
+        }
+        return fizzBuzzList;
+    }
+}
