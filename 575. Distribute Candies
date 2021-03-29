@@ -1,0 +1,15 @@
+public class Solution
+{
+    public int DistributeCandies(int[] candyType)
+    {
+        //Can only eat half of the candy she has
+        int maxCandies = candyType.Length / 2;
+
+        //HashSet to have a distinct list of candies she has
+        HashSet<int> distinctCandyTypes = candyType.ToHashSet();
+        int distinctCandyCount = distinctCandyTypes.Count();
+
+        //return whatever is less because that will restrict how many she can consume
+        return Math.Min(maxCandies, distinctCandyCount);
+    }
+}
