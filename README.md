@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 15MAR21: [68 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [575. Distribute Candies](https://leetcode.com/problems/distribute-candies/)
+- As of 30MAR21: [69 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1582. Special Positions in a Binary Matrix](https://leetcode.com/problems/special-positions-in-a-binary-matrix/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
