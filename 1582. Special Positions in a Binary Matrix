@@ -1,0 +1,50 @@
+public class Solution
+{
+    public int NumSpecial(int[][] mat)
+    {
+        int specialNumbers = 0;
+        int columnIndex = 0;
+
+        //Iterate through ROWS to look for a ROW with one instance of 1 and find the index of that 1.
+        for (int i = 0; i < mat.Length; i++)
+        {
+            //takes the current row
+            int[] currentRow = mat[i];
+            //finds all of instances of one and storesw it in a array
+            int onesInRow = 0;
+            for (int k = 0; k < currentRow.Length; k++)
+            {
+                if (currentRow[k] == 1)
+                {
+                    onesInRow++;
+                }
+            }
+            //if there is more than one instance of 1
+            if (onesInRow == 1)
+            {
+                //continue
+                columnIndex = Array.IndexOf(currentRow, 1);
+            }
+            else
+                continue;
+                //get me the index of the one
+
+            int onesInColumn = 0;
+            for (int j = 0; j < mat.Length; j++)
+            {
+
+                if (mat[j][columnIndex] == 1)
+                {
+                    onesInColumn++;
+                }
+            }
+
+            if (onesInColumn == 1)
+            {
+                specialNumbers++;
+            }
+        }
+
+        return specialNumbers;
+    }
+}
