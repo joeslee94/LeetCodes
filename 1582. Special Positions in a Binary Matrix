@@ -19,15 +19,13 @@ public class Solution
                     onesInRow++;
                 }
             }
-            //if there is more than one instance of 1
+
             if (onesInRow == 1)
             {
-                //continue
                 columnIndex = Array.IndexOf(currentRow, 1);
             }
             else
                 continue;
-                //get me the index of the one
 
             int onesInColumn = 0;
             for (int j = 0; j < mat.Length; j++)
