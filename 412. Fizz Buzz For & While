@@ -1,0 +1,66 @@
+//FOR LOOP
+public class Solution
+{
+    public IList<string> FizzBuzz(int n)
+    {
+        var fizzBuzzList = new List<string>();
+        for (int i = 1; i <= n; i++)
+        {
+            if (i % 3 == 0)
+            {
+                if (i % 5 == 0)
+                {
+                    fizzBuzzList.Add("FizzBuzz");
+                }
+                else
+                {
+                    fizzBuzzList.Add("Fizz");
+                }
+            }
+            else if (i % 5 == 0)
+            {
+                fizzBuzzList.Add("Buzz");
+            }
+            else
+            {
+                string numtoString = i.ToString();
+                fizzBuzzList.Add(numtoString);
+            }
+        }
+        return fizzBuzzList;
+    }
+}
+
+//WHILE LOOP
+public class Solution
+{
+    public IList<string> FizzBuzz(int n)
+    {
+        var fizzBuzzList = new List<string>();
+
+        while(n > 0)
+        {
+            if(n % 3 == 0)
+            {
+                if(n % 5 == 0)
+                {
+                    fizzBuzzList.Add("FizzBuzz");
+                }
+                else
+                    fizzBuzzList.Add("Fizz");
+            }
+            else if(n % 5 == 0)
+            {
+                fizzBuzzList.Add("Buzz");
+            }
+            else
+            {
+                string numToString = n.ToString();
+                fizzBuzzList.Add(numToString);
+            }
+            n--;
+        }
+        fizzBuzzList.Reverse();
+        return fizzBuzzList;
+    }
+}
