@@ -1,0 +1,80 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution
+{
+    public bool IsUnivalTree(TreeNode root)
+    {
+        //Created a stack
+        Stack<TreeNode> uniValuedTree = new Stack<TreeNode>();
+        
+        //Pushed the root onto the stack
+        uniValuedTree.Push(root);
+        
+        //Got the value from the root = 1
+        int valueToCheck = root.val;
+        
+        //while the stack has more than 1 element
+        
+        while(uniValuedTree.Count > 0)
+        {
+        //Cycles
+        //1: root with val 1 is in stack so it enters
+        //2: there are two nodes that are to the left and right of root and right is on top of left
+        //3: there are two nodes one on top is the Node that is the one two rights to the root and the one under is the Node to the left of the root
+        //4. One node remains and it is the Node to the left of the root
+        //5. Two nodes are in stack with the Node that is right of the Node that is to the left of the root is on top and the Node two lefts from the root is on bottom
+        //6. One more node that is two lefts from the root is left
+    
+            TreeNode nextNode = uniValuedTree.Pop();
+            //Cycles
+            //1. root Node with val 1 is popped off
+            //2. root's right node is popped off
+            //3. Node that is two rights to the root is popped off
+            //4. Node to the left of root is popped
+            //5. Pop Node that is left then right to root
+            //6. Pop off node that is two lefts from the root is left
+            
+            if(nextNode.val != valueToCheck)
+            {
+                return false;
+            }
+            //checks node's value
+            
+            if(nextNode.left != null)
+            {
+                uniValuedTree.Push(nextNode.left);
+            }
+            //Cycles
+            //1. Node left of root 1 is not null and is equal to 1 push node to stack
+            //2. Node left of the node to the right of the root is null so nothing is pushed
+            //3. Node two rights of the root has two null values, so nothing is pushed
+            //4. Node left of the Node left of the root is NOT NULL so it is pushed
+            //5. There are no nodes attached to the recently popped Node nothing is pushed
+            //6. There are no nodes attached to the recently popped Node nothing is pushed
+            
+            if(nextNode.right != null)
+            {
+                uniValuedTree.Push(nextNode.right);
+            }
+            //Cycles
+            //1. Node right of root 1 is not null and is equal to 1 push node to stack
+            //2. Node right of the node right of the root is NOT NULL so it is pushed
+            //3. Node two rights of the root has two null values, so nothing is pushed
+            //4. Node right of the Node left of the root is NOT NULL so it is pushed
+            //5. There are no nodes attached to the recently popped Node nothing is pushed
+            //6. There are no nodes attached to the recently popped Node nothing is pushed
+        }
+        return true;
+    }
+}
