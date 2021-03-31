@@ -1,0 +1,28 @@
+public class Solution 
+{
+    public int[] ReplaceElements(int[] arr)
+    {
+        int firstElement = arr.Max();
+        arr[0] = firstElement;
+
+
+        for (int i = 1; i < arr.Length; i++)
+        {
+            int currGreatestNum = arr[arr.Length - 1]; 
+
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[j] > currGreatestNum)
+                {
+                    currGreatestNum = arr[j];
+                }
+            }
+            arr[i] = currGreatestNum;
+        }
+
+        int lastElement = -1;
+        arr[arr.Length - 1] = lastElement;
+
+        return arr;
+    }
+}
