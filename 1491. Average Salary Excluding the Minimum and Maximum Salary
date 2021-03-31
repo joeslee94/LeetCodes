@@ -1,0 +1,22 @@
+public class Solution
+{
+    public double Average(int[] salary)
+    {
+        double howManySalaries = salary.Length;
+        double maxSalary = salary.Max();
+        double minSalary = salary.Min();
+        double total = salary.Sum();
+        double averageNoMinNoMax = (total - maxSalary - minSalary)/(howManySalaries-2);
+        return averageNoMinNoMax;
+    }
+}
+
+//Shortened BUT cuts off the decimals
+public class Solution
+{
+    public double Average(int[] salary)
+    {
+        double average = return (salary.Sum() - salary.Max() - salary.Min())/(salary.Length-2);
+        return average;
+    }
+}
