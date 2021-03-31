@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 30MAR21: [73 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1299. Replace Elements with Greatest Element on Right Side](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
+- As of 30MAR21: [74 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [66. Plus One](https://leetcode.com/problems/plus-one/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
