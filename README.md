@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 30MAR21: [72 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1491. Average Salary Excluding the Minimum and Maximum Salary](https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/)
+- As of 30MAR21: [73 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1299. Replace Elements with Greatest Element on Right Side](https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
