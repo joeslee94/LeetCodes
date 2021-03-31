@@ -1,0 +1,95 @@
+public class Solution
+{
+    public bool IsValid(string s)
+    {
+        if (s.Length % 2 != 0)
+        {
+            return false;
+        }
+        if (s.Contains('('))
+        {
+            if (!s.Contains(')'))
+            {
+                return false;
+            }
+        }
+        if (s.Contains('['))
+        {
+            if (!s.Contains(']'))
+            {
+                return false;
+            }
+        }
+        if (s.Contains('{'))
+        {
+            if (!s.Contains('}'))
+            {
+                return false;
+            }
+        }
+
+        bool openClosedBracketEqual = true;
+        Stack<char> openBracketStack = new Stack<char>(s.Length);
+
+        foreach (char bracket in s)
+        {
+            if (bracket == '(' || bracket == '[' || bracket == '{')
+            {
+                openBracketStack.Push(bracket);
+                continue;
+            }
+
+            char openBracket;
+            if (openBracketStack.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                openBracket = openBracketStack.Peek();
+            }
+
+            if (bracket == ')')
+            {
+                if (openBracket == '(')
+                {
+                    openBracketStack.Pop();
+                    continue;
+                }
+                else
+                    openClosedBracketEqual = false;
+            }
+            else if (bracket == ']')
+            {
+                if (openBracket == '[')
+                {
+                    openBracketStack.Pop();
+                    continue;
+                }
+                else
+                    openClosedBracketEqual = false;
+                break;
+            }
+            else if (bracket == '}')
+            {
+                if (openBracket == '{')
+                {
+                    openBracketStack.Pop();
+                    continue;
+                }
+                else
+                    openClosedBracketEqual = false;
+                break;
+            }
+        }
+
+        if (openBracketStack.Count != 0)
+        {
+            openClosedBracketEqual = false;
+        }
+        else
+            openClosedBracketEqual = true;
+
+        return openClosedBracketEqual;
+    }
+}
