@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 30MAR21: [74 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [66. Plus One](https://leetcode.com/problems/plus-one/)
+- As of 30MAR21: [75 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [965. Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
