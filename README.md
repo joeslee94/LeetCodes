@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 30MAR21: [76 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [700. Search in a Binary Search Tree](https://leetcode.com/problems/search-in-a-binary-search-tree/)
+- As of 30MAR21: [77 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [226. Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/submissions/)
 - PENDING: [784. Letter Case Permutation](https://leetcode.com/problems/letter-case-permutation/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
