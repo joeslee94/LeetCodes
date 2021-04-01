@@ -1,0 +1,67 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution
+{
+    public TreeNode InvertTree(TreeNode root)
+    {
+        if(root == null)
+        {
+            return root;
+        }
+        
+        Queue<TreeNode> switchTree = new Queue<TreeNode>();
+        switchTree.Enqueue(root);
+
+        //I want to hold the left node in a holderNode
+        //remap the the left position from the currentNode TO node found at currentNode.right
+        //remap the right position of currentNode to holderNode
+        
+        while(switchTree.Count > 0)
+        {
+            TreeNode currentNode = switchTree.Dequeue();
+            TreeNode holderNode = currentNode.left;
+            
+            if(currentNode.left != null && currentNode.right != null)
+            {
+                switchTree.Enqueue(currentNode.left);
+                switchTree.Enqueue(currentNode.right);
+                currentNode.left = currentNode.right;
+                currentNode.right = holderNode;
+                continue;
+            }
+            
+            if(currentNode.left != null && currentNode.right == null)
+            {
+                switchTree.Enqueue(currentNode.left);
+                currentNode.right = holderNode;
+                currentNode.left = null;
+                continue;
+            }
+            
+            if(currentNode.left == null && currentNode.right != null)
+            {
+                switchTree.Enqueue(currentNode.right);
+                currentNode.left = currentNode.right;
+                currentNode.right = null;
+                continue;
+            }
+            
+            if(currentNode.left == null && currentNode.right == null)
+            {
+                continue;
+            }   
+        }
+        return root;
+    }
+}
