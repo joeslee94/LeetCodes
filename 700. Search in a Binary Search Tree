@@ -1,0 +1,49 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution
+{
+    public TreeNode SearchBST(TreeNode root, int val)
+    {
+        Queue<TreeNode> searchForValTree = new Queue<TreeNode>();
+        searchForValTree.Enqueue(root);
+        
+        if(val == root.val)
+        {
+            return root;
+        }
+        
+        while(searchForValTree.Count > 0)
+        {
+            TreeNode currentNode = searchForValTree.Dequeue();
+            
+            if(currentNode.val == val)
+            {
+                return currentNode;
+            }
+            
+            if(currentNode.left != null)
+            {
+                searchForValTree.Enqueue(currentNode.left);
+            }
+            
+            if(currentNode.right != null)
+            {
+                searchForValTree.Enqueue(currentNode.right);
+            }
+
+        }
+        
+        return null;
+    }
+}
