@@ -1,0 +1,29 @@
+public class Solution
+{
+    public int FindLucky(int[] arr)
+    {
+        Array.Sort(arr);
+
+        HashSet<int> uniqueElementsInArray = arr.ToHashSet();
+        int[] intsInArray = uniqueElementsInArray.ToArray();
+
+        for (int i = 0; i < intsInArray.Length; i++)
+        {
+            int inspectionInt = intsInArray[i];
+
+            int counter = arr.Count(x => x == inspectionInt);
+
+            if (counter != inspectionInt)
+            {
+                uniqueElementsInArray.Remove(inspectionInt);
+            }
+        }
+
+        if (uniqueElementsInArray.Count == 0)
+        {
+            return -1;
+        }
+        else
+            return uniqueElementsInArray.Max();
+    }
+}
