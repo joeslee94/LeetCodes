@@ -1,0 +1,51 @@
+public class Solution
+{
+    public bool KLengthApart(int[] nums, int k)
+    {
+        //for loop to iterate through array
+        for (int i = 0; i < nums.Length; i++)
+        {
+            //counter int that is going to be used to compare to k
+            int counter = 0;
+            //move to the next occurence of 1
+            if (nums[i] == 0)
+            {
+                continue;
+            }
+            //when we get to a 1 within the array
+            if(nums[i] == 1)
+            {
+                //from that position at 1
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+                    //if the next number is 0 increment counter
+                    if (nums[j] == 0)
+                    {
+                        counter++;
+                        continue;
+                    }
+
+                    //once we hit a 1 stop incrementing counter
+                    if(nums[j] == 1)
+                    {
+                        break;
+                    }
+                }
+            }
+            //if 1 is not in the last position in array
+            if (i != Array.LastIndexOf(nums, 1))
+            {
+                //check this condition
+                if (counter >= k)
+                {
+                    continue;
+                }
+                else
+                    return false;
+            }
+            else
+                break;
+        }
+        return true;
+    }
+}
