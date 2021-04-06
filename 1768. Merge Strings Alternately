@@ -1,0 +1,29 @@
+public class Solution
+{
+    public string MergeAlternately(string word1, string word2)
+    {
+        StringBuilder alternateWords = new StringBuilder();
+        int word1Length = word1.Length;
+        int word2Length = word2.Length;
+        int longerWordLength = Math.Max(word1Length, word2Length);
+
+        while (word1Length > 0 && word2Length > 0)
+        {
+            for (int i = 0; i < longerWordLength; i++)
+            {
+                if (word1Length > 0)
+                {
+                    alternateWords.Append(word1[i]);
+                    word1Length--;
+                }
+
+                if (word2Length > 0)
+                {
+                    alternateWords.Append(word2[i]);
+                    word2Length--;
+                }
+            }
+        }
+        return alternateWords.ToString();
+    }
+}
