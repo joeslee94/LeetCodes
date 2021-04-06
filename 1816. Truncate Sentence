@@ -1,0 +1,16 @@
+public class Solution {
+    public string TruncateSentence(string s, int k)
+    {
+        string[] wordsArr = s.Split(" ");
+        string[] shortenedSentence = new string[k];
+
+        for (int i = 0; i < k; i++)
+        {
+            shortenedSentence[i] = wordsArr[i];
+        }
+
+        string shortenedSentenceString = string.Join(" ", shortenedSentence);
+
+        return shortenedSentenceString;    
+    }
+}
