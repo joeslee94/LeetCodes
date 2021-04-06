@@ -1,0 +1,43 @@
+public class Solution
+{
+    public string LongestCommonPrefix(string[] strs)
+    {
+        if(strs.Length == 0)
+        {
+            return "";
+        }
+        
+        if(strs.Length == 1)
+        {
+            return strs[0];
+        }
+        
+        StringBuilder commonPrefix = new StringBuilder();
+        Array.Sort(strs);
+        int lengthOfShortestWord = strs[0].Length;
+        string shortestWord = strs[0];
+        string previousPrefix = "";
+        
+        for (int i = 0; i < lengthOfShortestWord; i++)
+        {
+            commonPrefix.Append(shortestWord[i]);
+            string growingPrefix = commonPrefix.ToString();
+
+            foreach (string word in strs)
+            {
+                if (word[0] != shortestWord[0])
+                {
+                    return "";
+                }
+                if (word[i] != shortestWord[i])
+                {
+                    return previousPrefix;
+                }
+            }
+
+            previousPrefix = growingPrefix;
+        }
+
+        return previousPrefix;
+    }
+}
