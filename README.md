@@ -6,6 +6,6 @@ Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
 - As of 03APR21: [83 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1812. Determine Color of a Chessboard Square](https://leetcode.com/problems/determine-color-of-a-chessboard-square/)
+- Last Solved: [1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/submissions/)
 - PENDING: [423. Reconstruct Original Digits from English](https://leetcode.com/problems/reconstruct-original-digits-from-english/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
