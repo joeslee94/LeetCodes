@@ -1,0 +1,20 @@
+public class Solution
+{
+    public bool SquareIsWhite(string coordinates)
+    {
+        char[] coordArr = coordinates.ToCharArray();
+        char letter = coordArr[0];
+        char number = coordArr[1];
+
+        if (letter % 2 != 0 && number % 2 != 0)
+        {
+            return false;
+        }
+        else if (letter % 2 == 0 && number % 2 == 0)
+        {
+            return false;
+        }
+        else
+            return true;
+    }
+}
