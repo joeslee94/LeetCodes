@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 03APR21: [81 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [14. Longest Common Prefix](https://leetcode.com/problems/longest-common-prefix/)
+- As of 03APR21: [82 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1816. Truncate Sentence](https://leetcode.com/problems/truncate-sentence/submissions/)
 - PENDING: [423. Reconstruct Original Digits from English](https://leetcode.com/problems/reconstruct-original-digits-from-english/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
