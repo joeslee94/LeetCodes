@@ -1,0 +1,21 @@
+public class Solution 
+{
+    public int FindMin(int[] nums)
+    {
+        int minNum = nums[0];
+        for(int i = 1; i < nums.Length; i++)
+        {
+            if(minNum > nums[i])
+            {
+                minNum = nums[i];
+            }
+        }
+        return minNum;
+        //84ms
+        
+        
+        // Array.Sort(nums);
+        // return nums[0]; 148ms
+        //return nums.Min(); 140ms
+    }
+}
