@@ -1,0 +1,41 @@
+public class Solution
+{
+    public int MaxLengthBetweenEqualCharacters(string s)
+    {
+        var sToHashSet = s.ToHashSet();
+        int[] differencesForEachLetter = new int[sToHashSet.Count()];
+        int arrayIndex = 0;
+
+        foreach (char letter in sToHashSet)
+        {
+            int firstPosition = s.IndexOf(letter);
+            int lastPosition = s.LastIndexOf(letter);
+            differencesForEachLetter[arrayIndex] = lastPosition - firstPosition - 1;
+            arrayIndex++;
+        }
+
+        int maxValue = differencesForEachLetter[0];
+        for (int i = 0; i < differencesForEachLetter.Length; i++)
+        {
+            if (maxValue < differencesForEachLetter[i])
+            {
+                maxValue = differencesForEachLetter[i];
+            }
+        }
+
+
+        if (maxValue == 0)
+        {
+            return 0;
+        }
+        else if(maxValue == -1)
+        {
+            return -1;
+        }
+        else
+        {
+            return maxValue;
+        }
+        
+    }
+}
