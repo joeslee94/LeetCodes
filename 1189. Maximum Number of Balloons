@@ -1,0 +1,38 @@
+public class Solution
+{
+    public int MaxNumberOfBalloons(string text)
+    {
+        int[] balloonLetterContainer = new int[5];
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (text[i] == 'b')
+            {
+                balloonLetterContainer[0]++;
+            }
+            if (text[i] == 'a')
+            {
+                balloonLetterContainer[1]++;
+            }
+            if (text[i] == 'l')
+            {
+                balloonLetterContainer[2]++;
+            }
+            if (text[i] == 'o')
+            {
+                balloonLetterContainer[3]++;
+            }
+            if (text[i] == 'n')
+            {
+                balloonLetterContainer[4]++;
+            }
+        }
+
+        int numberOfLs = (int)Math.Floor((decimal)balloonLetterContainer[2] / 2);
+        balloonLetterContainer[2] = numberOfLs;
+
+        int numberOfOs = (int)Math.Floor((decimal)balloonLetterContainer[3] / 2);
+        balloonLetterContainer[3] = numberOfOs;
+
+        return balloonLetterContainer.Min();
+    }
+}
