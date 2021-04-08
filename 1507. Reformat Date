@@ -1,0 +1,58 @@
+public class Solution
+{
+    public string ReformatDate(string date)
+    {
+        string[] splitDate = date.Split(" ");
+        StringBuilder reformattedDate = new StringBuilder();
+
+        //Year
+        reformattedDate.Append(splitDate[2]);
+        reformattedDate.Append("-");
+
+        //Month
+        string[] months = { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        string month = splitDate[1];
+        int monthNum = 1;
+        for (int i = 0; i < months.Length; i++)
+        {
+            if (month != months[i])
+            {
+                monthNum++;
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        if (monthNum < 10)
+        {
+            reformattedDate.Append("0");
+            reformattedDate.Append(monthNum.ToString());
+            reformattedDate.Append("-");
+        }
+        else
+        {
+            reformattedDate.Append(monthNum.ToString());
+            reformattedDate.Append("-");
+        }
+
+        //Day
+        string day = splitDate[0];
+        if (char.IsDigit(day[0]))
+        {
+            if (char.IsDigit(day[1]))
+            {
+                reformattedDate.Append(day[0]);
+                reformattedDate.Append(day[1]);
+            }
+            if (!char.IsDigit(day[1]))
+            {
+                reformattedDate.Append(0);
+                reformattedDate.Append(day[0]);
+            }
+        }
+
+        return reformattedDate.ToString();   
+    }
+}
