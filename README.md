@@ -5,7 +5,7 @@
 Problems that I solved on LeetCode to improve my technical skills.
 
 ### Quick Look
-- As of 08APR21: [87 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1189. Maximum Number of Balloons](https://leetcode.com/problems/maximum-number-of-balloons/)
+- As of 08APR21: [88 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1446. Consecutive Characters](https://leetcode.com/problems/consecutive-characters/)
 - PENDING: [423. Reconstruct Original Digits from English](https://leetcode.com/problems/reconstruct-original-digits-from-english/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
