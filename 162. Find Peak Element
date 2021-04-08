@@ -1,0 +1,29 @@
+public class Solution
+{
+    public int FindPeakElement(int[] nums)
+    {
+        int firstNum = nums[0];
+        if(nums.Length == 1 || firstNum > nums[1])
+        {
+            return 0;
+        }
+        
+        int lastNum = nums[nums.Length - 1];
+        if(lastNum > nums[nums.Length - 2])
+        {
+            return nums.Length - 1;
+        }
+        
+        int peakPosition = 0;
+        
+        for(int i = 1; i < nums.Length - 1; i++)
+        {
+            if(nums[i] > nums[i-1] && nums[i] > nums[i+1])
+            {
+                peakPosition = i;
+                break;
+            }
+        }
+        return peakPosition;
+    }
+}
