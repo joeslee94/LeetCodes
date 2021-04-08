@@ -1,0 +1,36 @@
+public class Solution
+{
+    public int FindDuplicate(int[] nums)
+    {
+        Array.Sort(nums);
+        int areYouDuplicate = 0;
+        for(int i = 0; i < nums.Length-1; i++)
+        {
+            if(nums[i] == nums[i+1])
+            {
+                areYouDuplicate = nums[i];
+            }
+        }
+        return areYouDuplicate;
+        //96ms
+//         int duplicate = 0;
+        
+//         for(int i = 0; i < nums.Length; i++)
+//         {
+//             int numToCheck = nums[i];
+            
+//             for(int j = i + 1; j < nums.Length; j++)
+//             {
+//                 if(nums[i] == nums[j])
+//                 {
+//                     duplicate = nums[j];
+//                     return nums[j];
+//                 }
+//                 else
+//                     continue;
+//             }
+//         }
+//         return duplicate;
+        //540ms
+    }
+}
