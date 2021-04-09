@@ -1,0 +1,83 @@
+public class Solution
+{
+    public string OriginalDigits(string s)
+    {
+        StringBuilder numString = new StringBuilder();
+
+        int zCount = 0; 
+        int xCount = 0; 
+        int wCount = 0; 
+        int uCount = 0; 
+        int gCount = 0; 
+        int sCount = 0; 
+        int oCount = 0; 
+        int hCount = 0; 
+        int vCount = 0; 
+        int iCount = 0;
+
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (s[i] == 'z')
+            {
+                zCount++;
+            }
+            else if (s[i] == 'x')
+            {
+                xCount++;
+            }
+            else if (s[i] == 'w')
+            {
+                wCount++;
+            }
+            else if (s[i] == 'u')
+            {
+                uCount++;
+            }
+            else if (s[i] == 'g')
+            {
+                gCount++;
+            }
+            else if (s[i] == 's')
+            {
+                sCount++;
+            }
+            else if (s[i] == 'o')
+            {
+                oCount++;
+            }
+            else if (s[i] == 'h')
+            {
+                hCount++;
+            }
+            else if (s[i] == 'v')
+            {
+                vCount++;
+            }
+            else if (s[i] == 'i')
+            {
+                iCount++;
+            }
+        }
+
+        sCount -= xCount;
+        oCount -= (zCount + wCount + uCount);
+        hCount -= gCount;
+        vCount -= sCount;
+        iCount -= (xCount + gCount + vCount);
+
+        int[] numCounts = { zCount, oCount, wCount, hCount, uCount, vCount, xCount, sCount, gCount, iCount };
+
+        for (int i = 0; i < numCounts.Length; i++)
+        {
+            if (numCounts[i] > 0)
+            {
+                string numToChar = i.ToString();
+                numToChar.ToCharArray();
+                string correctNums = new string(numToChar[0], numCounts[i]);
+                numString.Append(correctNums);
+            }
+        }
+
+        return numString.ToString();
+    }
+}
