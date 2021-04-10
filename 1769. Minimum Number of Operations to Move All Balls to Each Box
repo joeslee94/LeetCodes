@@ -1,0 +1,48 @@
+public class Solution
+{
+    public int[] MinOperations(string boxes)
+    {
+        int numberOfOnes = 0;
+
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            if (boxes[i] == '1')
+            {
+                numberOfOnes++;
+            }
+        }
+        //found number of ones
+
+        int[] onesIndexes = new int[numberOfOnes];
+        int onesIndexesPointer = 0;
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            if (boxes[i] == '1')
+            {
+                onesIndexes[onesIndexesPointer] = i;
+                onesIndexesPointer++;
+            }
+        }
+        //created an array of the number of ones + found the indices of all the ones
+
+        int[] ballsDistances = new int[boxes.Length];
+        int distanceStoragePointer = 0;
+        for (int i = 0; i < boxes.Length; i++)
+        {
+            ballsDistances[distanceStoragePointer] = absDifferenceOfIndex(onesIndexes, i);
+            distanceStoragePointer++;
+        }
+
+        return ballsDistances;
+    }
+    
+    public int absDifferenceOfIndex(int[] onesIndexes, int currentIndex)
+    {
+        int distanceForZeroVal = 0;
+        for (int i = 0; i < onesIndexes.Length; i++)
+        {
+            distanceForZeroVal += Math.Abs(currentIndex - onesIndexes[i]);
+        }
+        return distanceForZeroVal;
+    }
+}
