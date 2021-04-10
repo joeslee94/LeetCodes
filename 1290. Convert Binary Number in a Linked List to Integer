@@ -1,0 +1,29 @@
+public class Solution 
+{
+    public int GetDecimalValue(ListNode head)
+    {
+        Stack<ListNode> tailFirstHeadLast = new Stack<ListNode>();
+        ListNode pointer = head;
+
+        while(pointer != null)
+        {
+            tailFirstHeadLast.Push(pointer);
+            pointer = pointer.next;
+        }
+        
+        double sumOfBinaries = 0;
+        int power = 0;
+        while(tailFirstHeadLast.Count > 0)
+        {
+            ListNode currentNode = tailFirstHeadLast.Pop();
+            
+            if(currentNode.val == 1)
+            {
+                sumOfBinaries += Math.Pow(2, power);
+            }
+            
+            power++;
+        }
+        return (int)sumOfBinaries;
+    }
+}
