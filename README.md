@@ -3,7 +3,7 @@
 ### Also, if you want me to review my logical process for one the the problems, contact me.
 
 - All files in this repository were focused on improving my coding skills.
-- 11APR21 Reached 100 LeetCodes! (96 Days From First Problem)
+- 11APR21 Reached 100 LeetCodes Solved! (96 Days From 05JAN21)
 
 ### Quick Look
 - As of 11APR21: [100 Solved](https://leetcode.com/joeslee94/)
