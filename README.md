@@ -8,5 +8,5 @@
 ### Quick Look
 - As of 11APR21: [100 Solved](https://leetcode.com/joeslee94/)
 - Last Solved: [1636. Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/)
-- PENDING: COMPLETED [423. Reconstruct Original Digits from English](https://leetcode.com/problems/reconstruct-original-digits-from-english/)
+- PENDING: Propsose a Medium LeetCode for me to work on!
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
