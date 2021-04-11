@@ -1,0 +1,36 @@
+public class Solution
+{
+    public int[] FrequencySort(int[] nums)
+    {
+        Array.Sort(nums);
+        Array.Reverse(nums);
+
+        HashSet<int> uniqueNums = nums.ToHashSet();
+        List<int> frequencyOfNum = new List<int>(uniqueNums.Count());
+
+        foreach (var number in uniqueNums)
+        {
+            frequencyOfNum.Add(nums.Count(digit => digit == number));                
+        }
+
+        List<int> uniqueNumsList = uniqueNums.ToList();
+        List<int> sortedList = new List<int>(nums.Length);
+
+        while(frequencyOfNum.Count > 0)
+        {
+            int lowestFrequency = frequencyOfNum.Min();
+            int indexOfLowestFrequency = frequencyOfNum.IndexOf(lowestFrequency);
+            int numberAtLowestFreqIndex = uniqueNumsList[indexOfLowestFrequency];
+
+            for (int i = 0; i < lowestFrequency; i++)
+            {
+                sortedList.Add(numberAtLowestFreqIndex);
+            }
+
+            frequencyOfNum.Remove(lowestFrequency);
+            uniqueNumsList.Remove(numberAtLowestFreqIndex);
+        }
+
+        return sortedList.ToArray();
+    }
+}
