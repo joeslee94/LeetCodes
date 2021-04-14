@@ -8,5 +8,5 @@
 ### Quick Look
 - As of 11APR21: [100 Solved](https://leetcode.com/joeslee94/)
 - Last Solved: [1636. Sort Array by Increasing Frequency](https://leetcode.com/problems/sort-array-by-increasing-frequency/)
-- PENDING: Propsose a Medium LeetCode for me to work on!
+- PENDING: [1095. Find in Moutain Array](https://leetcode.com/problems/find-in-mountain-array/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
