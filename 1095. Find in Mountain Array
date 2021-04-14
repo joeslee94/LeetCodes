@@ -1,0 +1,110 @@
+/**
+ * // This is MountainArray's API interface.
+ * // You should not implement it, or speculate about its implementation
+ * class MountainArray {
+ *     public int Get(int index) {}
+ *     public int Length() {}
+ * }
+ */
+
+class Solution
+{
+    public int FindInMountainArray(int target, MountainArray mountainArr)
+    {
+        int low = 0;
+        int mid = 0;
+        int peak = FindPeakOfArray(mountainArr);
+        int high = mountainArr.Length() - 1;
+
+        int targetIndex = CheckAscendingSide(mountainArr, target, low, mid, peak);
+        if (targetIndex < 0)
+        {
+            return CheckDescendingSide(mountainArr, target, peak, mid, high);
+        }
+        else
+            return targetIndex;
+    }
+    
+    //Descending side check IF THE ASCENDING SIDE DID NOT HAVE DESIRED VALUE example (3) 1, 2, 4, 5, 4, 3, 2, 1 //reverse binary search
+    public int CheckDescendingSide(MountainArray mountainArr, int target, int low, int mid, int high)
+    {
+        while (low <= high)
+        {
+            mid = (low + high) / 2;
+            int midValue = mountainArr.Get(mid);
+
+            if (midValue == target)
+            {
+                return mid;
+            }
+
+            if (midValue < target)
+            {
+                high = mid - 1; //bringing in the right most boundary to the value to the left of mid if target is greater than mid //move up the peak toward target
+            }
+            else
+            {
+                low = mid + 1; //if target is less mid point value we need to move down the peak to find the target value //move down the peak toward target
+            }
+        }
+
+        return -1;
+    }
+    
+    //Ascending side check 1, 2, 4, 5 //standard binary search
+    public int CheckAscendingSide(MountainArray mountainArr, int target, int low, int mid, int high)
+    {
+        while (low <= high)
+        {
+            mid = (low + high) / 2;
+            int midValue = mountainArr.Get(mid);
+
+            if (midValue == target)
+            {
+                return mid;
+            }
+
+            if (midValue < target) //target is greater than midpoint value everything under the midpoint and at the midpoint does not matter //move up the peak with lower bound
+            {
+                low = mid + 1; 
+            }
+            else //target is less than midpoint value meaning everything to the right of the midpoint and at the midpoint does not matter //move down the peak with upper bound
+            {
+                high = mid - 1;
+            }
+        }
+        return -1;
+    }
+    
+    public int FindPeakOfArray(MountainArray mountainArr)
+    {
+        int low = 0;
+        int high = mountainArr.Length() - 1;
+        int peak = 0;
+
+        //find the peek via binary search
+        while (low < high)
+        {
+            int mid = (low + high) / 2;
+            int midMinusOne = mountainArr.Get(mid - 1);
+            int midValue = mountainArr.Get(mid);
+            int midPlusOne = mountainArr.Get(mid + 1);
+
+            if (midValue > midMinusOne && midValue > midPlusOne)
+            {
+                peak = mid; //finds the peak and breaks out of while loop
+                break;
+            }
+
+            if (midValue > midMinusOne && midValue < midPlusOne) //ascending 345
+            {
+                low = mid; //set it to mid and not mid + 1 because we might miss the peak
+            }
+            else //midValue < midMinusOne && midValue > midPlusOne //descending 543
+            {
+                high = mid; //set it to mid and not mid - 1 because we might miss the peak
+            }
+        }
+        return peak;
+    }
+}
