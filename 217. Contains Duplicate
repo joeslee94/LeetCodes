@@ -1,0 +1,11 @@
+public class Solution
+{
+    public bool ContainsDuplicate(int[] nums)
+    {
+        HashSet<int> numsList = nums.ToHashSet();
+        if(nums.Length != numsList.Count())
+            return true;
+        else
+            return false;
+    }
+}
