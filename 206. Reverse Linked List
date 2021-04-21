@@ -1,0 +1,118 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode ReverseList(ListNode head)
+    {
+        if(head == null || head.next == null)
+        {
+            return head;    
+        }
+        
+        ListNode pointer = head; //1
+        ListNode pointerOne = pointer.next; //2
+        ListNode pointerTwo = pointerOne.next; //3
+        
+        pointer.next = null;
+        
+        while(pointerOne != null)
+        {
+            pointerOne.next = pointer;
+            pointer = pointerOne;
+            
+            pointerOne = pointerTwo;
+            
+            if(pointerOne != null)
+            {
+                pointerTwo = pointerOne.next; 
+            }
+        }
+        head = pointer;        
+        return head;
+    //BEFORE WHILE LOOP
+    //  1  -->  2  -->  3  -->  4  -->  5
+    // H,P      P1      P2
+
+    //  1  --x  2  -->  3  -->  4  -->  5
+    // H,P      P1      P2
+
+    // IN WHILE LOOP
+    // -----STEP 1-----
+    //  1   2  -->  3  -->  4  -->  5
+    // H,P  P1      P2
+
+    //  1    2  --> 3  -->  4  -->  5
+    // H,P<--P1     P2
+    // - Pointer.next now points to pointer so 2 is linked back with 1 because P1 is pointing at node with 1
+
+    //  1   2  -->  3  -->  4  -->  5
+    // H<--P1,P     P2
+    // - Pointer is now PointerOne so we have it pointing at 2
+
+    //  1   2  -->  3     -->  4  -->  5
+    // H<-- P       P1,P2
+    // - PointerOne is shuffled to PointerTwo's position
+
+
+    // Check if pointerOne is not null, move pointer two
+    // 1   2  -->  3     -->  4  -->  5
+    // H<-- P      P1         P2
+
+
+    // -----STEP 2-----
+    //  1   2  --> 3 -->  4  -->  5
+    // H<-- P  <-- P1     P2
+
+    //  1    2   --> 3   -->  4  -->  5
+    // H<-- (2)  <-- P,P1     P2
+
+    //  1    2   --> 3   -->  4     -->  5
+    // H<-- (2)  <-- P        P1,P2
+    // Check if pointerOne is not null, move pointer two
+
+    //  1    2   --> 3   -->  4  -->  5
+    // H<-- (2)  <-- P        P1      P2
+
+    // -----STEP 3-----
+    //  1    2   --> 3   -->  4  -->  5
+    // H<-- (2)  <-- P   <--  P1      P2
+
+    //  1    2   --> 3   -->  4  -->  5
+    // H<-- (2)  <--(3)  <--  P,P1    P2
+
+    //  1    2   --> 3   -->  4  -->  5     --> null
+    // H<-- (2)  <--(3)  <--  P       P1,P2
+    // Check if pointerOne is null if not null pointerTwo is P1.next
+
+    //  1    2   --> 3   -->  4  -->  5  --> null
+    // H<-- (2)  <--(3)  <--  P       P1     P2
+
+    // -----STEP 4-----
+    //  1    2   --> 3   -->  4  -->  5  --> null
+    // H<-- (2)  <--(3)  <--  P  <--  P1     P2
+
+    //  1    2   --> 3   -->  4  -->  5    --> null
+    // H<-- (2)  <--(3)  <-- (4) <--  P,P1     P2
+
+    //  1    2   --> 3   -->  4  -->  5    --> null
+    // H<-- (2)  <--(3)  <-- (4) <--  P        P1,P2
+    // Check if pointerOne is null, and at this point P1 is null so P2 doesnt move either
+
+    // Break out of loop SINCE P1 == null
+
+    //  1    2   --> 3   -->  4  -->  5    --> null
+    // H<-- (2)  <--(3)  <-- (4) <--  P        P1,P2
+
+    // Set P to H
+    //  1      2   --> 3   -->  4  -->  5    --> null
+    // (1)<-- (2)  <--(3)  <-- (4) <--  H        P1,P2
+    }
+}
