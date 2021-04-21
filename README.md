@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095. Find in Moutain Array.
 
 ### Quick Look
-- As of 11APR21: [103 Solved](https://leetcode.com/joeslee94/)
+- As of 11APR21: [104 Solved](https://leetcode.com/joeslee94/)
 - Last Solved: [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
-- PENDING:
+- PENDING: [200. Number Of Islands](https://leetcode.com/problems/number-of-islands/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
