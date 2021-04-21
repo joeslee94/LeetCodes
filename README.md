@@ -4,10 +4,10 @@
 
 - All files in this repository were focused on improving my coding skills.
 - 11APR21 Reached 100 LeetCodes Solved! (96 Days From 05JAN21).
-- 14APR21 First Hard Problem Completed 1095. Find in Moutain Array.
+- 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 11APR21: [104 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-- PENDING: [200. Number Of Islands](https://leetcode.com/problems/number-of-islands/)
+- As of 22APR21: [105 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [200. Number Of Islands](https://leetcode.com/problems/number-of-islands/)
+- PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
