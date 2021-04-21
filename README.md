@@ -8,6 +8,6 @@
 
 ### Quick Look
 - As of 11APR21: [104 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [219. Contains Duplicate II](https://leetcode.com/problems/contains-duplicate-ii/)
+- Last Solved: [206. Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 - PENDING: [200. Number Of Islands](https://leetcode.com/problems/number-of-islands/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
