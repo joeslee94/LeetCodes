@@ -1,0 +1,32 @@
+public class Solution
+{
+    public int[] KWeakestRows(int[][] mat, int k)
+    {
+        List<int> rowStrength = new List<int>();
+
+        for (int pointer = 0; pointer < mat.Length; pointer++)
+        {
+            int sumOfRowElements = mat[pointer].Sum();
+            rowStrength.Add(sumOfRowElements);
+        }
+        //created array of 5 elements that are sum of each matrix row
+
+        List<int> sortedRowStrength = rowStrength.ToList();
+        sortedRowStrength.Sort();
+
+        int[] weakToStrong = new int[k];
+
+        for (int i = 0; i < k; i++)
+        {
+            weakToStrong[i] = rowStrength.IndexOf(sortedRowStrength[i]);
+            rowStrength.Insert(rowStrength.IndexOf(sortedRowStrength[i]), 'a');
+            rowStrength.RemoveAt(rowStrength.IndexOf(sortedRowStrength[i]));
+        }
+
+        //2 Lists
+        //2 4 1 2 5
+        //1 2 2 4 5
+
+        return weakToStrong;    
+    }
+}
