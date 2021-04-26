@@ -1,0 +1,35 @@
+public class Solution
+{
+    public int SumBase(int n, int k)
+    {
+        //when n is divided by k, the remainder becomes the ones digit
+        //the quotient from the last operation is divided by k
+        //remainder from the new operation becomes the next digit to the left
+        //back stop is when the quotient is 0
+        
+        //Example: 34 in base 10 expressed in base 6
+        //34/6 = 5 remainder 4
+        //new num = 4
+        //5/6 = 0 remainder 5
+        //new num = 54
+        
+        //36/6 = 6 R 0
+        //ones digit = 0
+        //6/6 = 1 R 0
+        //digit to left = 0 so new num = 00
+        //1/6 = 0 R 1
+        //digit to the left = 1 so new num = 100
+        //number is 100
+        
+        //so to get the sum of the digits, we just need to add the number that results from n%k
+        
+        int sumOfDigits = 0;
+        
+        while(n > 0)
+        {
+            sumOfDigits += n % k;
+            n /= k;
+        }
+        return sumOfDigits;
+    }
+}
