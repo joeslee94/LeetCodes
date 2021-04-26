@@ -1,0 +1,37 @@
+public class Solution
+{
+    enum ITEM
+    {
+        TYPE,
+        COLOR,
+        NAME
+    }
+    
+    public int CountMatches(IList<IList<string>> items, string ruleKey, string ruleValue)
+    {
+        int ruleKeyIdx = 0;
+        if(ruleKey == "type")
+        {
+            ruleKeyIdx = (int)ITEM.TYPE;
+        }
+        else if(ruleKey == "color")
+        {
+            ruleKeyIdx = (int)ITEM.COLOR;
+        }
+        else if(ruleKey == "name")
+        {
+            ruleKeyIdx = (int)ITEM.NAME;
+        }
+        
+        int matchCount = 0;
+        foreach(var item in items)
+        {
+            if(item[ruleKeyIdx] == ruleValue)
+            {
+                matchCount++;
+            }
+        }
+        
+        return matchCount;
+    }
+}
