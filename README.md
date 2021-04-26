@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 22APR21: [106 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1337. The K Weakest Rows in a Matrix](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/)
+- As of 22APR21: [107 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [155. Min Stack](https://leetcode.com/problems/min-stack/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
