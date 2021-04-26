@@ -1,0 +1,41 @@
+public class Solution
+{
+    public int DominantIndex(int[] nums)
+    {
+        
+        if(nums.Length == 1)
+        {
+            return 0;
+        }
+        
+        int largestNum = 0;
+        int largestNumIdx = 0;
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if(largestNum < nums[i])
+            {
+                largestNum = nums[i];
+                largestNumIdx = i;
+            }
+        }
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if(largestNum != nums[i])
+            {
+                int doubleI = nums[i] * 2;
+                if(largestNum < doubleI)
+                {
+                    return -1;
+                }
+                else
+                    continue;
+            }
+            else
+                continue;
+        }
+        
+        return largestNumIdx;
+    }
+}
