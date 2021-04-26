@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 27APR21: [110 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1773. Count Items Matching a Rule](https://leetcode.com/problems/count-items-matching-a-rule/)
+- As of 27APR21: [111 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1822. Sign of the Product of an Array](https://leetcode.com/problems/sign-of-the-product-of-an-array/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
