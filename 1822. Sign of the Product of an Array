@@ -1,0 +1,27 @@
+public class Solution
+{
+    public int ArraySign(int[] nums)
+    {
+        int numOfNegatives = 0;
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            if(nums[i] < 0)
+            {
+                numOfNegatives++;
+            }
+            
+            if(nums[i] == 0)
+            {
+                return 0;
+            }
+        }
+        
+        if(numOfNegatives % 2 == 0)
+        {
+            return 1;
+        }
+        else
+            return -1;
+    }
+}
