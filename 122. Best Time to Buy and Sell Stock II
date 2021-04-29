@@ -1,0 +1,25 @@
+public class Solution
+{
+    public int MaxProfit(int[] prices)
+    {
+        int minPrice = prices[0];
+        int maxProfit = 0;
+        int totalProfit = 0;
+        
+        for(int i = 0; i < prices.Length; i++)
+        {
+            int currentProfit = prices[i] - minPrice;
+            if(prices[i] < minPrice)
+            {
+                minPrice = prices[i];
+            }
+            else if(currentProfit > maxProfit)
+            {
+                totalProfit += currentProfit;
+                maxProfit = 0;
+                minPrice = prices[i];
+            }
+        }
+        return totalProfit;
+    }
+}
