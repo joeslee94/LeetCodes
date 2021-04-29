@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 27APR21: [117 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [1051. Height Checker](https://leetcode.com/problems/height-checker/)
+- As of 27APR21: [118 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [121. Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
