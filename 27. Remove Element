@@ -1,0 +1,30 @@
+public class Solution
+{
+    public int RemoveElement(int[] nums, int val)
+    {
+        int count = 0;
+        Array.Sort(nums);
+        //have a pointer at the end of the array
+            //if the nums[pointer] == val then change that val to anything over 50
+            //pointer--;
+            //do this until we land on a nums[pointer] != val
+        
+        //if we find the value as we iterate through the array, switch the value found in index pointer with current position
+            //after swapping:
+            //pointer--;
+            //change the val to anything above 50
+            //let the loop iterate through the rest of the list
+            
+        for (int i = 0; i < nums.Length; i++)
+        {
+            if (nums[i] == val)
+            {
+                count++;
+                nums[i] = 100;
+            }
+        }
+        
+        Array.Sort(nums);
+        return nums.Length - count;  
+    }
+}
