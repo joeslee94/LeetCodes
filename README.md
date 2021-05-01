@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 27APR21: [120 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [283. Move Zeroes](https://leetcode.com/problems/move-zeroes/)
+- As of 27APR21: [121 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [27. Remove Element](https://leetcode.com/problems/remove-element/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
