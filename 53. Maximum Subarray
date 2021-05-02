@@ -1,0 +1,23 @@
+public class Solution
+{
+    public int MaxSubArray(int[] nums)
+    {
+        int runningSum = 0;
+        int maxSum = nums[0];
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            runningSum += nums[i]; //add the next item in the array
+            if(runningSum < nums[i]) //IF by adding the next item in the array the runningSum becomes lower than the element being inspected
+            {
+                runningSum = nums[i]; //reset the running sum to just the number at index i
+            }
+            
+            if(maxSum < runningSum) //if the runningSum is greater than the maxSum, that will become the new maxSum
+            {
+                maxSum = runningSum;
+            }
+        }
+        return maxSum;
+    }
+}
