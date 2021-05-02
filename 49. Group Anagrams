@@ -1,0 +1,71 @@
+public class Solution
+{
+        public IList<IList<string>> GroupAnagrams(string[] strs)
+        {
+            List<IList<string>> allAnagrams = new List<IList<string>>();
+            Dictionary<string, List<string>> wordValString = new Dictionary<string, List<string>>();
+            
+            for(int i = 0; i < strs.Length; i++)
+            {
+                char[] strToArr = strs[i].ToCharArray();
+                Array.Sort(strToArr);
+                string key = new string(strToArr);
+                
+                if(wordValString.ContainsKey(key))
+                {
+                    wordValString[key].Add(strs[i]);
+                }
+                else
+                {
+                    wordValString.Add(key, new List<string>());
+                    wordValString[key].Add(strs[i]);
+                }
+            }
+            
+            foreach(var entry in wordValString)
+            {
+                allAnagrams.Add(entry.Value);
+            }
+            
+            return allAnagrams;
+        }
+}
+
+//             for(int i = 0; i < strs.Length; i++)
+//             {
+//                 int currWordVal = stringToIntValue(strs[i]);
+//                 if (wordValString.ContainsKey(currWordVal))
+//                 {
+//                     wordValString[currWordVal].Add(strs[i]);
+//                 }
+//                 else
+//                 {
+//                     wordValString.Add(currWordVal, new List<string>());
+//                     wordValString[currWordVal].Add(strs[i]);
+//                 }
+
+//             }
+
+//             foreach (var entry in wordValString)
+//             {
+//                 allAnagrams.Add(entry.Value);
+//             }
+
+            
+
+//             return allAnagrams;
+//         }
+
+//         public int stringToIntValue(string s)
+//         {
+//             int valueOfWord = 0;
+//             char[] sToCharArr = s.ToCharArray();
+            
+//             foreach (char c in sToCharArr)
+//             {
+//                 valueOfWord += c;
+//             }
+            
+//             return valueOfWord;
+//         }
+// }
