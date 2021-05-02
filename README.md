@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 01MAY21: [125 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- As of 01MAY21: [126 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [49. Group Anagrams](https://leetcode.com/problems/group-anagrams/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
