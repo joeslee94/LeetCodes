@@ -1,3 +1,33 @@
+//New Solution
+public class Solution
+{
+    public int[] TwoSum(int[] nums, int target)
+    {
+        int[] twoIndexes = new int[2];
+
+        if(nums == null || nums.Length < 2)
+        {
+            return twoIndexes;
+        }
+
+        Dictionary<int, int> twoSumDict = new Dictionary<int, int>();
+        for (int i = 0; i < nums.Length; i++)
+        {
+            //two conditions
+            if (twoSumDict.ContainsKey(target - nums[i]))
+            {
+                twoIndexes[0] = twoSumDict[target - nums[i]];
+                twoIndexes[1] = i;
+                break;
+            }
+            else
+                twoSumDict.Add(nums[i], i);
+        }
+        return twoIndexes;
+    }
+}
+
+//Old Solution
 using System;
 using System.Collections.Generic;
 using System.Linq;
