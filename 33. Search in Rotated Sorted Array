@@ -1,0 +1,73 @@
+public class Solution
+{
+    public int Search(int[] nums, int target)
+    {
+            int peakIndex = 0;
+            int peak = nums[0];
+            int targetIdx = -1;
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                if (peak <= nums[i])
+                {
+                    peakIndex = i;
+                    peak = nums[i];
+                }
+            }
+
+            if (target == peak)
+            {
+                return peakIndex;
+            }
+            else if (nums[0] <= target && target < peak)
+            {
+                int low = 0;
+                int high = peakIndex - 1;
+                int mid;
+
+                while (low <= high)
+                {
+                    mid = (low + high) / 2;
+                    if (target == nums[mid])
+                    {
+                        targetIdx = mid;
+                        break;
+                    }
+                    else if (target < nums[mid])
+                    {
+                        high = mid - 1;
+                    }
+                    else
+                        low = mid + 1;
+                }
+            }
+            else
+            {
+                int low = peakIndex + 1;
+                int high = nums.Length;
+                int mid;
+
+                while (low <= high)
+                {
+                    mid = (low + high) / 2;
+                    if (mid < nums.Length)
+                    {
+                        if (target == nums[mid])
+                        {
+                            targetIdx = mid;
+                            break;
+                        }
+                        else if (target < nums[mid])
+                        {
+                            high = mid - 1;
+                        }
+                        else
+                            low = mid + 1;
+                    }
+                    else
+                        break;
+                }
+            }
+            return targetIdx;
+    }
+}
