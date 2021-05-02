@@ -1,0 +1,23 @@
+public class Solution
+{
+    public int LengthOfLongestSubstring(string s)
+    {
+        Dictionary<char, int> stringDict = new Dictionary<char, int>();
+        int longestLength = 0;
+        for(int i = 0; i < s.Length; i++)
+        {
+            if (stringDict.TryGetValue(s[i], out int index))
+            {
+                longestLength = Math.Max(longestLength, stringDict.Count);
+                i = index;
+                stringDict.Clear();
+            }
+            else
+            {
+                stringDict.Add(s[i], i);
+            }
+        }
+        longestLength = Math.Max(longestLength, stringDict.Count);
+        return longestLength;
+    }
+}
