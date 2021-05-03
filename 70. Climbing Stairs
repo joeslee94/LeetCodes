@@ -1,0 +1,39 @@
+public class Solution
+{
+    public int ClimbStairs(int n)
+    {
+        int numberOne = 1;
+        int numberTwo = 2;
+        int numberThree = 3;
+        int totalNums = 0;
+        
+        if(n == numberOne)
+        {
+            return numberOne;
+        }
+        else if(n == numberTwo)
+        {
+            return numberTwo;
+        }
+        else if(n == numberThree)
+        {
+            return numberThree;
+        }
+        else if(n > 3)
+        {
+            int twoPrevious = numberTwo;
+            int previous = numberThree;
+            int temp = 0;
+            
+            for(int i = 4; i <= n; i++)
+            {
+                totalNums = twoPrevious + previous;
+                
+                temp = previous;
+                previous = totalNums;
+                twoPrevious = temp;
+            }
+        }
+        return totalNums;
+    }
+}
