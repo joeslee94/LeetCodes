@@ -1,0 +1,46 @@
+public class Solution
+{
+    public int NumRescueBoats(int[] people, int limit)
+    {
+        int boatCount = 0;
+        int j = people.Length - 1;
+        Array.Sort(people);
+
+        for(int i = 0; i < people.Length; i++)
+        {
+            int currPerson = people[i];
+            if(people[i] == 0)
+            {
+                continue;
+            }
+
+            if(people[i] < limit)
+            {
+                for(; j > i; j--)
+                {
+                    if(currPerson + people[j] <= limit && people[j] != 0)
+                    {
+                      boatCount++;
+                      people[i] = 0;
+                      people[j] = 0;
+                      break;
+                    }
+                }
+            }
+
+            if(people[i] < limit && people[i] != 0)
+            {
+                boatCount++;
+                people[i] = 0;
+            }
+
+            if(people[i] == limit)
+            {
+                boatCount++;
+                people[i] = 0;
+            }
+        
+        }
+        return boatCount;
+    }
+}
