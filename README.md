@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 04MAY21: [129 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [70. Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
+- As of 04MAY21: [130 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [1137. N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
