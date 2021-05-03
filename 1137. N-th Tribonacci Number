@@ -1,0 +1,42 @@
+public class Solution
+{
+    public int Tribonacci(int n)
+    {
+        int twoPrevious = 0;
+        int onePrevious = 1;
+        int current = twoPrevious + onePrevious;
+        int valueAtN = 0;
+        
+        if(n == 0)
+        {
+            return twoPrevious;
+        }
+        else if(n == 1)
+        {
+            return onePrevious;
+        }
+        else if(n == 2)
+        {
+            return current;
+        }
+        else if(n > 2)
+        {
+            //int tempTwoPrev;
+            int tempOnePrev;
+            int tempCurrent;
+            
+            for(int i = 3; i <= n; i++)
+            {
+                valueAtN = current + onePrevious + twoPrevious;
+                
+                tempOnePrev = onePrevious;
+                tempCurrent = current;
+                
+                current = valueAtN;
+                onePrevious = tempCurrent;
+                twoPrevious = tempOnePrev;
+            }
+        }
+        return valueAtN;
+    }
+}
