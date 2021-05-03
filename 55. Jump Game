@@ -1,0 +1,28 @@
+public class Solution
+{
+    public bool CanJump(int[] nums)
+    {
+        int jumpsInReserve = 0;
+
+        //if I can cycle through the whole array we jumped through it completely
+        for (int i = 0; i < nums.Length - 1; i++)
+        {
+            //if the number in the array is 0 AND the jumps left are 0
+            if (nums[i] == 0 && jumpsInReserve == 0)
+            {
+                return false;
+            }
+
+            //refill on the jumps IF nums[i] is greater
+            if (jumpsInReserve <= nums[i])
+            {
+                jumpsInReserve = nums[i];
+            }
+
+            //subtract a jump prior to cycling through the loop because the array is a 0 indexed entity
+            jumpsInReserve--;
+        }
+        //if the whole cycle completes
+        return true;
+    }
+}
