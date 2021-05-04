@@ -1,0 +1,21 @@
+public class Solution
+{
+    public string DestCity(IList<IList<string>> paths)
+    {
+        List<string> cities = new List<string>();
+        
+        foreach(var cityPair in paths)
+        {
+            cities.Add(cityPair[1]);
+        }
+        
+        foreach(var cityPair in paths)
+        {
+            if(cities.Contains(cityPair[0]))
+            {
+                cities.Remove(cityPair[0]);
+            }    
+        }
+        return cities[0];
+    }
+}
