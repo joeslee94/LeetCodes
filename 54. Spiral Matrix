@@ -1,0 +1,48 @@
+public class Solution
+{
+    public IList<int> SpiralOrder(int[][] matrix)
+    {
+        HashSet<int> uniqueResults = new HashSet<int>();
+        int leftBound = 0;
+        int topBound = 0;
+        
+        int rightBound = matrix[0].Length - 1;
+        int bottomBound = matrix.Length - 1;
+        
+        while(leftBound <= rightBound && topBound <= bottomBound)
+        {
+            //left to right
+            for(int l = leftBound; l <= rightBound; l++)
+            {
+                uniqueResults.Add(matrix[topBound][l]);
+            }
+            topBound++;
+            
+            //top to bottom
+            for(int t = topBound; t <= bottomBound; t++)
+            {
+                uniqueResults.Add(matrix[t][rightBound]);
+            }
+            rightBound--;
+            
+            
+            //right to left
+            for(int r = rightBound; r >= leftBound; r--)
+            {
+                uniqueResults.Add(matrix[bottomBound][r]);
+            }
+            bottomBound--;
+            
+            //bottom to top-1
+            for(int b = bottomBound; b >= topBound; b--)
+            {
+                uniqueResults.Add(matrix[b][leftBound]);
+            }
+            leftBound++;
+            
+        }
+        
+        List<int> finalResult = uniqueResults.ToList();
+        return finalResult;
+    }
+}
