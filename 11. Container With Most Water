@@ -1,0 +1,34 @@
+public class Solution
+{
+    public int MaxArea(int[] height)
+    {
+        if(height.Length <= 1)
+        {
+            return 0;
+        }
+        
+        
+        int begin = 0;
+        int end = height.Length - 1;
+                
+        int length = 0;
+        int width = 0;
+        int area = 0;
+        int maxArea = 0;
+        
+        while(begin < end)
+        {
+            length = Math.Min(height[begin], height[end]);
+            width = end - begin;
+            area = length * width;      
+            maxArea = Math.Max(area, maxArea);
+            
+            if(height[begin] <= height[end])
+                begin++;
+            else if(height[end] < height[begin])
+                end--;
+        }
+
+        return maxArea;
+    }
+}
