@@ -1,0 +1,62 @@
+public class Solution
+{
+    public Stack<char> RebuiltString(string original)
+    {
+        Stack<char> stk = new Stack<char>();
+        for(int i = 0; i < original.Length; i++)
+        {
+            if(original[i] == '#')
+            {
+                if(stk.Count() > 0)
+                {
+                    stk.Pop();
+                }
+                else
+                    continue;
+            }
+            else
+                stk.Push(original[i]);
+        }
+        return stk;
+    }
+    
+    public bool checkStacks(Stack<char> stkS, Stack<char> stkT)
+    {
+        if(stkS.Count() != stkT.Count())
+        {
+            return false;
+        }
+        else
+        {
+            while(stkS.Count() > 0)
+            {
+                char sChar = stkS.Pop();
+                char tChar = stkT.Pop();
+                
+                if(sChar != tChar)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }        
+    }
+    
+    public bool BackspaceCompare(string s, string t)
+    {
+        //1. # means backspace
+        //Within a string of chars and #'s # is translated into deleting the value prior to it.
+        //2. Only lowercase letters and #'s in string
+        //3. need to return true or false on if s and t result in the same string after deleting the characters prior to the #'s
+        
+        //Since the strings contain only lowercase letters and characters, we can change the letter before it to a set number.
+        //This will allow for all letters being "deleted" to be equal in nature which is the same as being taken out
+        //we need a way to deal with the # and ensuring it does not interfere with the process
+        
+        var stkS = RebuiltString(s);
+        var stkT = RebuiltString(t);
+        
+        
+        return checkStacks(stkS, stkT);
+    }
+}
