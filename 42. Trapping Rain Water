@@ -1,3 +1,53 @@
+//Solution Two
+public class Solution
+{
+    public int Trap(int[] height)
+    {
+        if(height.Length < 3)
+        {
+            return 0;
+        }
+        
+        int left = 0;
+        int right = height.Length - 1;
+        int maxLeft = height[left];
+        int maxRight = height[right];
+        int totalWater = 0;
+
+        while(left < right)
+        {
+            if(height[left] <= height[right])
+            {
+                if(maxLeft <= height[left])
+                {
+                    maxLeft = height[left];
+                    left++;
+                }
+                else
+                {
+                    totalWater += maxLeft - height[left];
+                    left++;
+                }
+            }
+            else
+            {
+                if(maxRight <= height[right])
+                {
+                    maxRight = height[right];
+                    right--;
+                }
+                else
+                {
+                    totalWater += maxRight - height[right];
+                    right--;
+                }
+            }
+        }
+        return totalWater;
+    }
+}
+
+//Solution One
 public class Solution
 {
     public int Trap(int[] height)
