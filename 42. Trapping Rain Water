@@ -1,0 +1,43 @@
+public class Solution
+{
+    public int Trap(int[] height)
+    {
+        int p = 1;
+        int maxL = 0;
+        int maxR = 0;
+        int totalWater = 0;
+
+        while(p < height.Length)
+        {
+            for(int i = p - 1; i >= 0; i--)
+            {
+                
+                if(maxL <= height[i])
+                {
+                    maxL = height[i];
+                }
+            }
+
+            for(int i = p + 1; i < height.Length; i++)
+            {
+                if(maxR <= height[i])
+                {
+                    maxR = height[i];
+                }
+            }
+
+            int currWater = Math.Min(maxL, maxR) - height[p];
+
+            if(currWater > 0)
+            {
+                totalWater += currWater;
+            }
+            
+            maxL = 0;
+            maxR = 0;
+            p++;
+        }
+        
+        return totalWater;
+    }
+}
