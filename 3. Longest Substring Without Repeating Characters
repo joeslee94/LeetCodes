@@ -1,3 +1,39 @@
+//HashSet
+public class Solution
+{
+    public int LengthOfLongestSubstring(string s)
+    {
+        if(s.Length < 2)
+        {
+            return s.Length;
+        }
+        
+        int longest = 0;
+        HashSet<char> uniqueLetters;
+        
+        for(int i = 0; i < s.Length; i++)
+        {
+            uniqueLetters = new HashSet<char>();
+
+            for(int j = i; j < s.Length; j++)
+            {
+                char currChar = s[j];
+                if(uniqueLetters.Contains(currChar))
+                {
+                    longest = Math.Max(longest, uniqueLetters.Count);
+                    uniqueLetters.Clear();
+                    break;
+                }
+                else
+                    uniqueLetters.Add(currChar);
+            }
+            longest = Math.Max(longest, uniqueLetters.Count);
+        }
+        return longest;
+    }
+}
+
+//Dictionary
 public class Solution
 {
     public int LengthOfLongestSubstring(string s)
