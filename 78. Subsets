@@ -1,0 +1,34 @@
+public class Solution
+{
+    public IList<IList<int>> Subsets(int[] nums)
+    {
+        var finalListSet = new List<IList<int>>();
+        
+        finalListSet.Add(new List<int>()); //seed of an empty list
+        
+        foreach(var num in nums) //iterating through each number of the array 1 --> 2 --> 3
+        {
+            var interListSet = new List<IList<int>>(); //new set of lists acts as a reset
+            foreach(var list in finalListSet) //1st iteration: [] //2nd iteration: [], [1]
+            {
+                List<int> interList = new List<int>(list); //acts as the reset function
+                interList.Add(num); 
+                
+                //1st iteration:
+                    //[] --> [1]
+                //2nd iteration:
+                    //[] --> [2]
+                    //[1] --> [1, 2]
+                //3rd iteration:
+                    //[] --> [3]
+                    //[1] --> [1, 3]
+                    //[2] --> [2, 3]
+                    //[1, 2] --> [1, 2, 3]
+                
+                interListSet.Add(interList); //add lists to intermediate set container
+            }
+            finalListSet.AddRange(interListSet); //add the range of sets to final set
+        }
+        return finalListSet;
+    }
+}
