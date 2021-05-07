@@ -1,3 +1,54 @@
+//Solution 2
+public class Solution
+{
+    public bool BackspaceCompare(string s, string t)
+    {
+        int pointerS = s.Length - 1;
+        int moveS = 0;
+        
+        int pointerT = t.Length - 1;
+        int moveT = 0;
+                
+        while(pointerS >= 0 || pointerT >= 0) //equal to
+        {
+            while(pointerS >= 0 && (s[pointerS] == '#' || moveS > 0))
+            {
+                if(s[pointerS] == '#')
+                    moveS++;
+                else
+                    moveS--;
+                
+                pointerS--;      
+            }
+            
+            while(pointerT >= 0 && (t[pointerT] == '#' || moveT > 0))
+            {
+                if(t[pointerT] == '#')
+                    moveT++;
+                else
+                    moveT--;
+                
+                pointerT--;      
+            }
+            
+            if(pointerS < 0 && pointerT < 0)
+                return true;
+            else if(pointerS < 0 || pointerT < 0)
+                return false;
+            else if(s[pointerS] != t[pointerT])
+                return false;  
+            else if(s[pointerS] == t[pointerT])
+            {
+                pointerS--;
+                pointerT--;
+            }
+        }
+        
+        return true;
+    }
+}
+
+//Solution 1
 public class Solution
 {
     public Stack<char> RebuiltString(string original)
