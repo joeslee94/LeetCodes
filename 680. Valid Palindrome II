@@ -1,0 +1,116 @@
+//Quick Improvements
+public class Solution
+{
+    
+    public bool SubValidPalindrome(string s, int pLeft, int pRight)
+    {
+        while(pLeft < pRight)
+        {
+            if(s[pLeft] != s[pRight])
+                return false;
+            else
+            {
+                pLeft++;
+                pRight--;
+            }    
+        }
+        return true;
+    }
+    
+    public bool ValidPalindrome(string s)
+    {
+        int pLeft = 0;
+        int pRight = s.Length - 1;
+        
+        while(pLeft < pRight)
+        {
+            if(s[pLeft] == s[pRight])
+            {
+                pLeft++;
+                pRight--;
+            }
+            else
+                return SubValidPalindrome(s, pLeft + 1, pRight) || SubValidPalindrome(s, pLeft, pRight - 1);
+        }
+        return true;
+    }
+}
+
+//Solution 1
+public class Solution
+{
+    public bool SubValidPalindrome(string s, int pLeft, int pRight)
+    {
+        while(pLeft < pRight)
+        {
+            if(s[pLeft] != s[pRight])
+            {
+                return false;
+            }
+            else
+            {
+                pLeft++;
+                pRight--;
+            }    
+        }
+        
+        return true;
+    }
+    public bool ValidPalindrome(string s)
+    {
+        int pLeft = 0;
+        int pRight = s.Length - 1;
+        int oneDeletion = 1;
+        
+        while(pLeft < pRight || oneDeletion < 0)
+        {
+            //if they are equal
+            if(s[pLeft] == s[pRight])
+            {
+                pLeft++;
+                pRight--;
+            }
+            else
+            {
+                oneDeletion--;
+                if(oneDeletion < 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    bool subOne = SubValidPalindrome(s, pLeft + 1, pRight);
+                    bool subTwo = SubValidPalindrome(s, pLeft, pRight - 1);
+                    if(subOne == true || subTwo == true)
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        
+        return true;
+    }
+}
+//Original logic within method while loop
+//if they are not equal
+//if(s[pLeft] == s[pRight - 1])
+//{
+//  pRight--;
+//  oneDeletion--;
+//}
+//else
+//  return false;
+
+//if(s[pLeft + 1] == s[pRight])
+//{
+//  pLeft++;
+//  oneDeletion--;
+//}
+//else
+//  return false;
+                
+//if(pRight-pLeft == 1 && oneDeletion > 0)
+//{
+//  return true;
+//}
