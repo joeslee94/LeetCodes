@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 09MAY21: [141 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [430. Flatten a Multilevel Doubly Linked List](https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/)
+- As of 09MAY21: [142 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [142. Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
