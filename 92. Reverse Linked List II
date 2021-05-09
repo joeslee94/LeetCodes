@@ -1,0 +1,85 @@
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+public class Solution
+{    
+    public ListNode ReverseBetween(ListNode head, int left, int right)
+    {
+        if(head == null || head.next == null || left == right)
+        {
+            return head;    
+        }
+        
+        ListNode pointer = head;
+        ListNode oneBefore = null;
+        ListNode pLeft = null;
+        
+        int pointerPos = 1;
+        //pointerPos to stop at left and right
+        //moves with pointer
+        
+        while(pointerPos < left)
+        {
+            oneBefore = pointer;
+            pointer = pointer.next;
+            pointerPos++;
+        }
+        //while loop ends with pointer @ left position
+                        
+        pLeft = pointer; //(2)
+        //with the previous while loop, pointer is @ left position
+        
+        ListNode next = null;
+        ListNode subReverse = null;
+        //creating a new listnode to hold newly reversed list
+        
+        while(left <= pointerPos && pointerPos <= right)
+        {
+            next = pointer.next;
+            //1: (3)
+            //2: (4)
+            //3: (5)
+            
+            pointer.next = subReverse;
+            //1: 2 (-->) null
+            //2: 3 (-->) 2 --> null
+            //3: 4 (-->) 3 --> 2 --> null
+            
+            subReverse = pointer;
+            //1: (2 --> null)
+            //2: (3--> 2 --> null)
+            //3: (4 --> 3 --> 2 --> null)
+            
+            pointer = next;
+            //1: (3)
+            //2: (4)
+            //3: (5)
+            
+            pointerPos++;
+            //1: 3
+            //2: 4
+            //3: 5 DONE
+        }
+        //pointer --> (5)
+        //subReverse --> (4 --> 3 --> 2 --> null)
+        
+        
+        pLeft.next = pointer;
+        
+        if(left > 1)
+        {
+            oneBefore.next = subReverse;
+            return head;
+        }
+        else
+            return subReverse;
+    }
+}
