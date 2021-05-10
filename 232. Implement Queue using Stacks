@@ -1,3 +1,76 @@
+//Solution 2: Using Stacks
+public class MyQueue {
+    public int count;
+    public Stack<int> myStack;
+    
+    /** Initialize your data structure here. */
+    public MyQueue()
+    {
+        myStack = new Stack<int>();
+        count = 0;
+    }
+    
+    /** Push element x to the back of queue. */
+    public void Push(int x)
+    {
+        myStack.Push(x);
+        count++;
+    }
+    
+    /** Removes the element from in front of queue and returns that element. */
+    public int Pop()
+    {
+        Stack<int> holder = new Stack<int>();
+
+        for(int i = 0; i < count - 1; i++)
+        {
+            holder.Push(myStack.Pop());
+        }
+        
+        int toRemove = myStack.Pop();
+        count--;
+        
+        while(holder.Count > 0)
+        {
+            myStack.Push(holder.Pop());
+        }
+        
+        return toRemove;
+    }
+    
+    /** Get the front element. */
+    public int Peek()
+    {
+        Stack<int> holder = new Stack<int>();
+        int toPeek = 0;
+        
+        for(int i = 0; i < count; i++)
+        {
+            toPeek = myStack.Pop();
+            holder.Push(toPeek);
+        }
+        
+        while(holder.Count > 0)
+        {
+            myStack.Push(holder.Pop());
+        }
+        
+        return toPeek;
+    }
+    
+    /** Returns whether the queue is empty. */
+    public bool Empty() 
+    {
+        if(count <= 0)
+        {
+            return true;
+        }
+        else
+            return false;
+    }
+}
+
+//Solution 1: Using Lists
 public class MyQueue {
     public int count;
     public int pointer;
