@@ -1,0 +1,36 @@
+public class Solution
+{
+    public string MinRemoveToMakeValid(string s)
+    {
+        StringBuilder sNew = new StringBuilder(s);
+        Stack<int> parenPos = new Stack<int>();
+        
+        for(int i = 0; i < sNew.Length; i++)
+        {
+            if(sNew[i] == '(')
+            {
+                parenPos.Push(i);
+            }
+            
+            if(sNew[i] == ')')
+            {
+                if(parenPos.Count != 0)
+                {
+                    parenPos.Pop();
+                }
+                else
+                {
+                    sNew[i] = '%';
+                }
+            }
+        }
+        
+        while(parenPos.Count > 0)
+        {
+            int idxToChange = parenPos.Pop();
+            sNew[idxToChange] = '%';
+        }
+        
+        return sNew.ToString().Replace("%", "");
+    }
+}
