@@ -1,0 +1,60 @@
+public class Solution
+{
+    public bool AllCaps(string word)
+    {
+        for(int i = 1; i < word.Length; i++)    
+        {
+            if('A' <= word[i] && word[i] <= 'Z')
+            {
+                continue;
+            }
+            else
+                return false;
+        }
+        return true;
+    }
+    
+    public bool AllLower(string word)
+    {
+        for(int i = 1; i < word.Length; i++)    
+        {
+            if('a' <= word[i] && word[i] <= 'z')
+            {
+                continue;
+            }
+            else
+                return false;
+        }
+        return true;
+    }
+    
+    
+    public bool DetectCapitalUse(string word)
+    {
+        if(word.Length == 1)
+        {
+            return true;
+        }
+            
+        char firstLetter = word[0];
+        char secondLetter = word[1];
+        
+        if('A' <= firstLetter && firstLetter <= 'Z')
+        {
+            if('A' <= secondLetter && secondLetter <= 'Z')
+            {
+                return AllCaps(word);
+            }
+            else if('a' <= secondLetter && secondLetter <= 'z')
+            {
+                return AllLower(word);
+            }
+        }
+        else if('a' <= firstLetter && firstLetter <= 'z')
+        {
+            return AllLower(word);
+        }
+        
+        return true;
+    }
+}
