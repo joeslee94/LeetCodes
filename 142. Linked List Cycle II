@@ -9,6 +9,60 @@
  *     }
  * }
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+//Solution 2
+public class Solution
+{
+    public ListNode DetectCycle(ListNode head)
+    {
+        if(head == null || head.next == null)
+        {
+            return null;
+        }
+        
+        ListNode turtle = head;
+        ListNode hare = head;
+        
+        while(true)
+        {
+            hare = hare.next;
+            turtle = turtle.next;
+            //need to check where turtle and hare meet
+            if(hare == null || hare.next == null)
+            {
+                 return null;
+            }
+            else
+                hare = hare.next;
+            
+            if(hare == turtle)
+            {
+                break;
+            }   
+        }
+        
+        ListNode resetPointer = head;
+        while(resetPointer != hare)
+        {
+            resetPointer = resetPointer.next;
+            hare = hare.next;
+        }
+        
+        return resetPointer;
+    }
+}
+
+//Solution 1
 public class Solution
 {
     public ListNode DetectCycle(ListNode head)
