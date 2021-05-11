@@ -1,0 +1,54 @@
+public class Solution
+{
+    public int[] QuickSort(int[] nums, int left, int right)
+    {
+        //base case
+        if(nums.Length <= 1 || left == right)
+        {
+            return nums;
+        }
+        
+        //the method itself
+        if(left<right)
+        {
+            int breakIndex = BreakApart(nums, left, right);
+            QuickSort(nums, left, breakIndex - 1);
+            QuickSort(nums, breakIndex + 1, right);    
+        }
+        
+        return nums;
+    }
+    
+    //THE SWAP MOST IMPORTANT PART
+    public int BreakApart(int[] nums, int left, int right)
+    {
+        int pivot = nums[right];
+        int pSlow = left;
+        
+        for(int j = pSlow; j < right; j++)
+        {
+            if(pivot > nums[j])
+            {
+                Swap(nums, pSlow, j);
+                pSlow++;
+            }
+        }
+        
+        Swap(nums, pSlow, right);
+        return pSlow;
+    }
+    
+    //just swapping in plce
+    public void Swap(int[] nums, int p1, int p2)
+    {
+        int temp = nums[p1];
+        nums[p1] = nums[p2];
+        nums[p2] = temp;
+    }
+    
+    public int FindKthLargest(int[] nums, int k)
+    {
+        int[] arrResult = QuickSort(nums, 0, nums.Length - 1);
+        return arrResult[arrResult.Length - k];
+    }
+}
