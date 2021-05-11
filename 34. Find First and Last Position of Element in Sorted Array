@@ -1,0 +1,58 @@
+public class Solution
+{
+    public int[] SearchRange(int[] nums, int target)
+    {
+        int[] range = {StartIndex(nums, target), EndIndex(nums, target)};
+        return range;
+    }
+    
+    public int StartIndex(int[] nums, int target)
+    {
+        if(nums.Length == 0)
+            return -1;
+        
+        int low = 0;
+        int high = nums.Length - 1;
+        
+        while(low < high)
+        {
+            int mid = low + (high - low) / 2;
+            if(nums[mid] < target)
+            {
+                low = mid + 1;
+            }
+            else //nums[mid] > target
+                high = mid;
+        }
+        
+        if(nums[low] == target)
+            return low;
+        else
+            return -1;
+    }
+    
+    public int EndIndex(int[] nums, int target)
+    {
+        if(nums.Length == 0)
+            return -1;
+        
+        int low = 0;
+        int high = nums.Length - 1;
+        
+        while(low < high)
+        {
+            int mid = low + (high - low + 1) / 2;
+            if(nums[mid] > target)
+            {
+                high = mid - 1;
+            }
+            else //nums[mid] < target
+                low = mid;
+        }
+        
+        if(nums[high] == target)
+            return high;
+        else
+            return -1;
+    }
+}
