@@ -1,3 +1,72 @@
+//Solution 2 QuickSelect
+public class Solution
+{
+    public int QuickSelect(int[] nums, int left, int right, int kIndex)
+    {
+        //base case
+        if(nums.Length <= 1 || left == right)
+        {
+            return nums[kIndex];
+        }
+        
+        int breakIndex = 0;
+
+        //the method itself
+        if(left<right)
+        {
+            breakIndex = BreakApart(nums, left, right);
+            if(kIndex == breakIndex)
+            {
+                return nums[breakIndex];
+            }
+            else if(kIndex > breakIndex)
+            {
+                return QuickSelect(nums, breakIndex + 1, right, kIndex);    
+            }
+            else //kIndex < breakIndex
+            {
+                return QuickSelect(nums, left, breakIndex - 1, kIndex);
+            }
+        }
+        return nums[breakIndex];
+    }
+    
+    //THE SWAP/PARTITION MOST IMPORTANT PART
+    public int BreakApart(int[] nums, int left, int right)
+    {
+        int pivot = nums[right];
+        int pSlow = left;
+        
+        for(int j = pSlow; j < right; j++)
+        {
+            if(pivot > nums[j])
+            {
+                Swap(nums, pSlow, j);
+                pSlow++;
+            }
+        }
+        
+        Swap(nums, pSlow, right);
+        return pSlow;
+    }
+    
+    //just swapping in plce
+    public void Swap(int[] nums, int p1, int p2)
+    {
+        int temp = nums[p1];
+        nums[p1] = nums[p2];
+        nums[p2] = temp;
+    }
+    
+    public int FindKthLargest(int[] nums, int k)
+    {
+        int newK = nums.Length - k;
+        int arrResult = QuickSelect(nums, 0, nums.Length - 1, newK);
+        return arrResult;
+    }
+}
+
+//Solution 1 QuickSort
 public class Solution
 {
     public int[] QuickSort(int[] nums, int left, int right)
