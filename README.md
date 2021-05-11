@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 09MAY21: [148 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
+- As of 09MAY21: [149 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [198. House Robber](https://leetcode.com/problems/house-robber/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
