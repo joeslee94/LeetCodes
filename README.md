@@ -7,7 +7,7 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 09MAY21: [146 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [232. Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
+- As of 09MAY21: [147 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
 - PENDING: [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - CHALLENGE: [1195. Fizz Buzz Multithreaded](https://leetcode.com/problems/fizz-buzz-multithreaded/)
