@@ -1,0 +1,23 @@
+public class Solution
+{
+    public int Rob(int[] nums)
+    {
+        if(nums == null || nums.Length == 0)
+        {
+            return 0;
+        }
+        
+        int prevSum = 0;
+        int twoPrevSum = 0;
+        int runningSum = 0;
+        
+        for(int i = 0; i < nums.Length; i++)
+        {
+            twoPrevSum = prevSum;
+            prevSum = runningSum;
+            runningSum = Math.Max(prevSum, twoPrevSum + nums[i]);
+        }
+        
+        return runningSum;
+    }
+}
