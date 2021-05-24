@@ -29,3 +29,40 @@ public class Solution
         return result;
     }
 }
+
+//     1
+//  2     3
+//4  5   6  7
+//4, 5, 2, 6, 7, 3, 1
+
+//recursive for node(1).left
+//node(1).left is not null --> recursive call for node(2)
+//node(2).left is not null --> recursive call for node(4)
+//node(4).left and right are null --> add to list [4]
+//return [4] to node(2) recursive call stack
+
+//node(2).right is not null --> recursive call for node(5)
+//node(5).left and right are null --> add to list [4, 5]
+//return [4, 5] to node(2) recursive call stack
+
+//node(2) recursive call stack is complete, add to list --> [4, 5, 2]
+//return [4, 5, 2] to original method call to node(1)
+
+//node(1) original method call has completed node.left
+//moves onto node.right and checking if it is null
+//node(1).right is not null --> recursive call for node(3)
+
+//node(3).left is not null --> recursive call for node(6)
+//node(6).right and left are null --> add to list [4, 5, 2, 6]
+//return [4, 5, 2, 6] to node(3) recursive call stack
+
+//node(3)'s recursive call stack picks up from node.right
+//node(3).right is not null --> recursive call for node(7)
+//node(7).left and right are null --> add to list [4, 5, 2, 6, 7]
+//return [4, 5, 2, 6, 7] to node(3) recursive call
+
+//node(3)'s recursive call stack is complete, add to list --> [4, 5, 2, 6, 7, 3]
+//return to original method call node(1)
+
+//node(1).val is added to the list --> [4, 5, 2, 6, 7, 3, 1]
+//return the list to method
