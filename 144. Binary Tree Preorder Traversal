@@ -43,6 +43,40 @@ public class Solution
         return result;
     }
 }
+//     1
+//  2     3
+//4  5   6  7
+
+//1st --> add 1 to list [1]
+//recursive for node(1).left
+//node(1).left is not null --> 2 is added to list --> [1, 2]
+
+//node(2).left is not null --> so recursive call to node(4)
+//4 is added to list --> [1, 2, 4] line 29
+//node(4).left is null AND node(4).right is null so return [1, 2, 4] to node(2)'s recursive call on stack
+
+//node(2).right is not null --> so recursive call to node(5)
+//5 is added to list that was returned [1, 2, 4, 5] to node(2) after node(4)'s recursive stack completed
+//node(5).left and node(5).right are null so return [1, 2, 4, 5] to node(2)'s recursive stack call
+
+//node(2) has explored its left and right so it is at line 41 return [1, 2, 4, 5] to node(1)'s original method call
+
+//node(1) has completed its left search and moves to line 36
+//node(1).right is not null --> so recursive call to node(3)
+//3 is added to list --> [1, 2, 4, 5, 3];
+
+//node(3).left is not null --> so recursive call to node(6)
+//6 is added to list --> [1, 2, 4, 5, 3, 6]
+//node(6).left and .right are null so return result to node(3)'s recursive call on stack
+
+//node(3) resumes on line 36 and node(3).right is not null --> recursive call on node(7)
+//7 is added to list --> [1, 2, 4, 5, 3, 6, 7]
+//node(7).right and left are null so return list to node(3)'s recursive call
+//node(3)'s recursive call is at line 41
+
+//return list to node(1)'s original method call
+//original method call is at line 41
+//return list [1, 2, 4, 5, 3, 6, 7]
 
 //Solution 1
 public class Solution {
