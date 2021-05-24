@@ -1,0 +1,31 @@
+public class Solution
+{
+    public IList<int> PostorderTraversal(TreeNode root)
+    {
+        List<int> result = new List<int>();
+        
+        if(root != null)
+        {    
+            return TraversePreOrder(root, result);    
+        }
+        else
+            return result;
+    }
+    
+    public List<int> TraversePreOrder(TreeNode node, List<int> result)
+    {        
+        if(node.left != null)
+        {
+            TraversePreOrder(node.left, result);
+        }
+        
+        if(node.right != null)
+        {
+            TraversePreOrder(node.right, result);
+        }
+        
+        result.Add(node.val);
+
+        return result;
+    }
+}
