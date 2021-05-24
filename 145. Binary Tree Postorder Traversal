@@ -6,22 +6,22 @@ public class Solution
         
         if(root != null)
         {    
-            return TraversePreOrder(root, result);    
+            return TraversePostOrder(root, result);    
         }
         else
             return result;
     }
     
-    public List<int> TraversePreOrder(TreeNode node, List<int> result)
+    public List<int> TraversePostOrder(TreeNode node, List<int> result)
     {        
         if(node.left != null)
         {
-            TraversePreOrder(node.left, result);
+            TraversePostOrder(node.left, result);
         }
         
         if(node.right != null)
         {
-            TraversePreOrder(node.right, result);
+            TraversePostOrder(node.right, result);
         }
         
         result.Add(node.val);
