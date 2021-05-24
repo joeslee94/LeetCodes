@@ -11,6 +11,40 @@
  *     }
  * }
  */
+//Solution 2
+public class Solution 
+{
+    public IList<int> PreorderTraversal(TreeNode root)
+    {
+        List<int> result = new List<int>();
+        
+        if(root != null)
+        {    
+            return TraversePreOrder(root, result);    
+        }
+        else
+            return result;
+    }
+    
+    public List<int> TraversePreOrder(TreeNode node, List<int> result)
+    {
+        result.Add(node.val);
+        
+        if(node.left != null)
+        {
+            TraversePreOrder(node.left, result);
+        }
+        
+        if(node.right != null)
+        {
+            TraversePreOrder(node.right, result);
+        }
+        
+        return result;
+    }
+}
+
+//Solution 1
 public class Solution {
     public IList<int> PreorderTraversal(TreeNode root)
     {
