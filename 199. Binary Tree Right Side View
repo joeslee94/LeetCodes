@@ -1,0 +1,56 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+//Solution 1 BFS
+public class Solution
+{
+    public IList<int> RightSideView(TreeNode root)
+    {
+        var finalList = new List<int>();
+        
+        if(root == null)
+        {
+            return finalList;
+        }
+        
+        Queue<TreeNode> BFSQueue = new Queue<TreeNode>();
+        BFSQueue.Enqueue(root);
+        
+        while(BFSQueue.Count > 0)
+        {
+            //List<int> level = new List<int>();
+            int count = 0;
+            int length = BFSQueue.Count;
+            TreeNode pointer = new TreeNode();
+            while(count < length)
+            {
+                pointer = BFSQueue.Dequeue();
+                
+                if(pointer.left != null)
+                {
+                    BFSQueue.Enqueue(pointer.left);
+                }
+                
+                if(pointer.right != null)
+                {
+                    BFSQueue.Enqueue(pointer.right);
+                }
+                
+                count++;
+            }
+            finalList.Add(pointer.val);
+        }
+            
+        return finalList;
+    }
+}
