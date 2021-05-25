@@ -1,0 +1,94 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution
+{
+    public int CountNodes(TreeNode root)
+    {
+        if(root == null)
+        {
+            return 0;
+        }
+        
+        double height = getTreeHeight(root);
+        
+        if(height == 0)
+        {
+            return 1;
+        }
+        
+        //gets the number of nodes before the final level
+        double two = Math.Pow(2, height) - 1;
+        
+        //binary search
+        double low = 0;
+        double high = two;
+        
+        while(low < high)
+        {
+            double idxToFind = Math.Ceiling((low + high) / 2);
+            if(nodeExists(idxToFind, height, root))
+            {
+                low = idxToFind;
+            }
+            else
+            {
+                high = idxToFind - 1;
+            }
+        }
+        
+        two += low;
+        two += 1;
+        
+        return (int)two;
+    }
+    
+    public double getTreeHeight(TreeNode root)
+    {
+        TreeNode pointer = root;
+        double height = 0;
+        
+        while(pointer.left != null)
+        {
+            height++;
+            pointer = pointer.left;
+        }
+        
+        return height;
+    }
+    
+    public bool nodeExists(double idxToFind, double height, TreeNode node)
+    {
+        double count = 0;
+        double low = 0;
+        double high = Math.Pow(2, height) - 1;
+        
+        while(count < height)
+        {
+            double midOfNode = Math.Ceiling((low + high) / 2);
+            if(idxToFind >= midOfNode)
+            {
+                node = node.right;
+                low = midOfNode;
+            }
+            else
+            {
+                node = node.left;
+                high = midOfNode - 1;
+            }
+            count++;
+        }
+        
+        return node != null;
+    }
+}
