@@ -11,6 +11,44 @@
  *     }
  * }
  */
+//Solution 2 DFS
+public class Solution
+{
+    public IList<int> RightSideView(TreeNode root)
+    {
+        List<int> rightFromRoot = new List<int>();
+        
+        rightFromRoot = DFS(root, 0, rightFromRoot);
+        
+        return rightFromRoot;
+    }
+    
+    public List<int> DFS(TreeNode node, int currentLevel, List<int> rightFromRoot)
+    {
+        if(node == null)
+        {
+            return rightFromRoot;
+        }
+        
+        if(currentLevel >= rightFromRoot.Count())
+        {
+            rightFromRoot.Add(node.val);
+        }
+        
+        if(node.right != null)
+        {
+            DFS(node.right, currentLevel + 1, rightFromRoot);
+        }
+        
+        if(node.left != null)
+        {
+            DFS(node.left, currentLevel + 1, rightFromRoot);
+        }
+        
+        return rightFromRoot;
+    }
+}
+
 //Solution 1 BFS
 public class Solution
 {
