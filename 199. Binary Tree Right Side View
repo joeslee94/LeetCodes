@@ -28,10 +28,10 @@ public class Solution
         
         while(BFSQueue.Count > 0)
         {
-            //List<int> level = new List<int>();
             int count = 0;
             int length = BFSQueue.Count;
             TreeNode pointer = new TreeNode();
+            
             while(count < length)
             {
                 pointer = BFSQueue.Dequeue();
