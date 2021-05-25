@@ -7,5 +7,5 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 12MAY21: [154 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [199. Binary Tree Right Side View](https://leetcode.com/problems/binary-tree-right-side-view/)
+- As of 12MAY21: [155 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [222. Count Complete Tree Nodes](https://leetcode.com/problems/count-complete-tree-nodes/)
