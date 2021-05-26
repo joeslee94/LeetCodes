@@ -1,0 +1,48 @@
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     public int val;
+ *     public TreeNode left;
+ *     public TreeNode right;
+ *     public TreeNode(int val=0, TreeNode left=null, TreeNode right=null) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+public class Solution {
+    public TreeNode IncreasingBST(TreeNode root) 
+    {
+        List<int> BSTToLinkedList = new List<int>();
+        BSTToLinkedList = TraverseInOrder(root, BSTToLinkedList);
+        
+        TreeNode newRoot = new TreeNode();
+        TreeNode pointer = newRoot;
+        
+        foreach(var nodeInOrder in BSTToLinkedList)
+        {
+            pointer.right = new TreeNode(nodeInOrder);
+            pointer = pointer.right;
+        }
+        
+        return newRoot.right;
+    }
+    
+    public List<int> TraverseInOrder(TreeNode node, List<int> BSTToLinkedList)
+    {
+        if(node.left != null)
+        {
+            TraverseInOrder(node.left, BSTToLinkedList);
+        }
+        
+        BSTToLinkedList.Add(node.val);
+        
+        if(node.right != null)
+        {
+            TraverseInOrder(node.right, BSTToLinkedList);
+        }
+        
+        return BSTToLinkedList;
+    }
+}
