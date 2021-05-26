@@ -1,0 +1,77 @@
+public class Solution
+{
+    public int OrangesRotting(int[][] grid)
+    {
+        //PUT ALL ROTTEN ORANGE LOCATION IN QUEUE
+        Queue<int[]> rotOrgGrid = new Queue<int[]>();
+        for(int i = 0; i < grid.Length; i++)
+        {
+            for(int j = 0; j < grid[i].Length; j++)
+            {
+                if(grid[i][j] == 2)
+                {
+                    rotOrgGrid.Enqueue(new int[] {i, j});
+                }
+            }
+        }
+       
+        //CREATE A DIRECTIONAL 2-D ARRAY
+        int[][] movement = 
+        {
+            new int[] {-1, 0}, //up
+            new int[] {1, 0}, //down
+            new int[] {0, 1}, //right
+            new int[] {0, -1} //left
+        };
+        
+        //KEEP TRACK OF MINS ELAPSED
+        int minElapsed = 0;
+        
+        //IF THERE ARE ROTTEN ORANGE GRIDS WITHIN THE QUEUE
+        while(rotOrgGrid.Count > 0)
+        {
+            int rottenCount = rotOrgGrid.Count;
+            
+            //NEED TO CYCLE FOR ALL ROTTEN ORANGES
+            for(int i = 0; i < rottenCount; i++)
+            {
+                int[] rottenCell = rotOrgGrid.Dequeue();
+                
+                //FOR ALL THE MOVEMENTS I NEED TO MAKE SURE ALL THE FRESH ONES ARE CONVERTED TO ROTTEN
+                foreach(int[] direction in movement)
+                {
+                    int row = rottenCell[0] + direction[0];
+                    int col = rottenCell[1] + direction[1];
+                    if(row >=0 && row < grid.Length && col >= 0 && col < grid[row].Length)
+                    {
+                        if(grid[row][col] == 1)
+                        {
+                            rotOrgGrid.Enqueue(new int[] {row, col});
+                            grid[row][col] = 2;
+                        }                        
+                    }
+                }
+            }
+            
+            //IF THERE ARE STILL NEWLY ROTTEN ORANGES
+            if(rotOrgGrid.Count > 0)
+            {
+                minElapsed++;
+            }
+        }
+        
+        //CHECK TO SEE IF THERE WERE UNREACHABLE FRESH ORANGES
+        for(int i = 0; i < grid.Length; i++)
+        {
+            for(int j = 0; j < grid[i].Length; j++)
+            {
+                if(grid[i][j] == 1)
+                {
+                    return -1;
+                }
+            }
+        }
+        
+        return minElapsed;
+    }
+}
