@@ -7,5 +7,5 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 26MAY21: [157 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [897. Increasing Order Search Tree](https://leetcode.com/problems/increasing-order-search-tree/)
+- As of 26MAY21: [158 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
