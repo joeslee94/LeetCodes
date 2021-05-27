@@ -7,5 +7,5 @@
 - 14APR21 First Hard Problem Completed 1095: Find in Moutain Array.
 
 ### Quick Look
-- As of 26MAY21: [159 Solved](https://leetcode.com/joeslee94/)
-- Last Solved: [994. Rotting Oranges](https://leetcode.com/problems/rotting-oranges/)
+- As of 27MAY21: [160 Solved](https://leetcode.com/joeslee94/)
+- Last Solved: [746. Min Cost Climbing Stairs](https://leetcode.com/problems/min-cost-climbing-stairs/)
