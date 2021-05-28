@@ -1,0 +1,59 @@
+public class Solution
+{
+    public int[] PrisonAfterNDays(int[] cells, int n)
+    {
+        
+        HashSet<string> cycleFinder = new HashSet<string>();
+        bool cycleExists = false;
+        int daysSeen = 0;
+        
+        while(n > 0)
+        {
+            int[] tomorrow = PrisonTomorrow(cells);
+            string dayKey = string.Join("", tomorrow);
+            
+            if(cycleFinder.Add(dayKey))
+            {
+                daysSeen++; 
+            }
+            else
+            {
+                cycleExists = true;
+                break;
+            }
+            
+            cells = tomorrow;
+            n--;
+        }
+        
+        if(cycleExists)
+        {
+            n %= daysSeen;
+        }
+        
+        while(n > 0)
+        {
+            int[] tomorrow = PrisonTomorrow(cells);
+            cells = tomorrow;
+            n--;
+        }
+        
+        return cells;
+        
+    }
+    
+    private int[] PrisonTomorrow(int[] cells)
+    {
+        int[] tomorrow = new int[cells.Length];
+
+        for (int i = 1; i < tomorrow.Length - 1; i++)
+        {
+            if (cells[i - 1] == cells[i + 1])
+                tomorrow[i] = 1;
+            else
+                tomorrow[i] = 0;
+        }
+
+        return tomorrow;
+    }
+}
